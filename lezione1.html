@@ -1,0 +1,232 @@
+<!doctype html>
+<!-- 
+     Se stai guardando qui è un buon inizio! 
+     Proseguendo nel corso capirai meglio alcune cose, soprattutto perchè non
+     ho avuto ancora modo di commentare per bene il codice,
+     le domande in merito saranno apprezzate.
+-->
+
+<!--<html lang="en" manifest="offline.manifest">-->
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="overview" class="step" data-x="3" data-y="2" data-scale="5.0"></div>
+
+    <div class="step slide" data-x="0" data-y="0">
+      <h1>Presentazione del corso</h1>
+      <p>
+        - Come si svolgeranno le lezioni</br>
+        - Esercizi</br>
+        - Come sempre, non abbiate timore ad interrompere se qualcosa non è chiaro
+      </p>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="0">
+      <h1>HTML/HTML5</h1>
+        <ul>
+          <li>HTML un po' di storia</li>
+          <li>Ipertesti, markup, tag</li>
+          <li>Ripassino HTML</li>
+          <li>Novità di HTML5!</li>
+          <li>CSS, stili, fondamenti della separazione tra tra contenuti e presentazione</li>
+          <li>Novità di CSS3 !</li></br>
+        
+        <p>Non entreremo nei dettagli perchè queste nozioni le tratterò come assodate.</p>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="1">
+      <h1>HTML un po' di storia</h1>
+      <p>
+      Nasce come linguaggio per la descrizione di testi strutturati, pensato e progettato inizialmente
+      da un fisico del CERN, Tim Berners-Lee che cercava un modo per distribuire le informazioni tra
+      i suoi colleghi e immagino' per la prima volta l'ipertesto, organizzando le informazioni in modo
+      non lineare.</br>Siamo nel 1989.
+      </p>
+    </div>
+    
+    <div class='step slide' data-x=1 data-y=2>
+      <h1>Ambiente di lavoro</h1>
+      <p>Per cominciare a sperimentare abbiamo bisogno di impostare un ambiente di lavoro, un editor,
+      un browser naturalmente e alcuni strumenti di comodità</p></br>
+      <ul>
+        <li>Editor, SDK, ambienti di lavoro</li>
+        <li>Browser: Chrome, Safari (WebKit), Firefox (Gecko), IE (Trident), Opera?</li>
+        <li>Estensioni: perchè sono essenziali al lavoro che faremo. Firebug, Resizer...</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="3">
+      <h1>Ipertesti, markup</h1>
+      <p>
+      In questo linguaggio vengono utilizzate particolari parole chiave per strutturare
+      il testo, dargli particolari proprieta' visive o inserire collegamenti ad altri
+      ipertesti.<br><br> I markup (anche chiamati tag) sono solitamente a coppie, uno
+      di apertura e uno di chiusura, delimitati da un maggiore e un minore:</p>
+      <xmp>
+        Un esempio di <code>tag</code>
+      </xmp>
+      <p>
+     E' evidente il perche' sia necessario aprire e chiudere i tag.<br>
+     La chiusura di un tag si ottiene utilizzando lo / (slash) prima del tag.<br>
+     Il browser INTERPRETA i tag!
+      </p>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="4">
+      <h1>Ripassino HTML</h1>
+      <p>
+      Tutto il documento HTML e' incluso tra i tag &lt;html&gt; e &lt;/html&gt; .
+      All'interno di essi troviamo solitamente due sezioni, un head e un body.
+      Nel body vengono scritti tutti contenuti, mentre l'head serve a specificare meta-informazioni
+      relative al documento, quali il titolo, il charset, l'inclusione di risorse esterne ecc.
+      </p>
+    </div>
+
+    <div class="step slide" data-x="1" data-z="-1" data-y="4" data-rotate-y="90" >
+      <h1>DOCTYPE, varianti HTML, header, meta, body</h1>
+      <p>
+      Fino a ieri dovevamo preoccuparti del DOCTYPE, strict, transitional, frameset,
+      html5 semplifica tutto cio' da:</p>
+      <xmp>
+        <!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN
+        http://www.w3.org/TR/html4/loose.dtd>
+      </xmp>
+      <p>a</p>
+      <xmp>
+        <!doctype html>
+      </xmp>
+      <p>
+      E' la prima riga del nostro file HTML e serve a dichiarare che il documento contiene HTML
+      e in particolare quale versione. Differenze tra le versioni, tag obsoleti...</p>
+    </div>
+ 
+    <div class="step slide" data-x="1" data-z="-2" data-y="4" data-rotate-y="90" >
+      <h1>Anatomia pagine html, tag comuni, attributi</h1>
+      <p>
+      <xmp>
+        <!doctype html>
+        <html>
+          <head>
+            <title>Anatomia pagina HTML</title>
+          </head>
+          <body>
+            <h1>Titolo</h1>
+            <p>Piccolo paragrafo di testo</p>
+            <a href='http://www.google.com'>Link a Google</a>
+          </body>
+        </html>
+        </xmp>
+    </div>
+
+    <div class="step slide" data-x="1" data-z="-3" data-y="4" data-rotate-y="90" >
+      <div class='padder'>
+            <h1>Titolo</h1>
+            <p>Piccolo paragrafo di testo</p>
+            <a href='http://www.google.com'>Link a Google</a>
+      </div>
+    </div>
+
+    <div class="step slide" data-x="1" data-z="-4" data-y="4" data-rotate-y="90" >
+      <h1>Tag comuni</h1>
+      <p>Link, crea un link</p><xmp><a href='http://test.com' title='test'>Test</a></xmp>
+      <p>Body, contiene il contenuto del documento </p><xmp><body></body></xmp>
+      <p>Button, crea un bottone</p><xmp><button type='submit'>Click me</button></xmp>
+      <p>P, denota un paragrafo  </p><xmp><p>Un paragrafo</p></xmp>
+    </div>
+
+    <div class="step slide" data-x="1" data-z="-5" data-y="4" data-rotate-y="90" >
+      <h1>Tag comuni</h1>
+      <p>Hr, esistono elementi senza chiusura </p><xmp><hr></xmp>
+      <p>Br </p><xmp><br></xmp>
+      <hr>
+    </div>
+
+    <div class="step slide" data-x="1" data-z="-6" data-y="4" data-rotate-y="90" >
+      <h1>Attributi</h1>
+      <p>Tutti i tag supportano attributi per meglio specificarne alcune proprietà</p>
+      <xmp><a href='http://www.google.com' title='Link a google'>Link</a></xmp>
+      <p>Esistono attributi booleani, ovvero che non necessitano un valore</p>
+      <xmp><input type='text' accesskey='g' readonly></xmp>
+      <p>Ci sono moltissimi attributi, molti importanti, date uno sguardo ai seguenti:</p>
+      <ul>
+        <li>tabindex</li>
+        <li>hidden</li>
+        <li>required</li>
+        <li>class</li>
+        <li>id</li>
+        <li>spellcheck</li>
+        <li>lang</li>
+        <li>contenteditable</li>
+        <li>style</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="5" >
+      <h1>Novita HTML5!</h1>
+      <ul>
+        <li>Nuovi elementi semantici: section, header, nav, article, footer</li>
+        <li>Video e Audio</li>
+        <li>Canvas</li>
+        <li>Geolocalizzazione</li>
+        <li>Web Storage / Local Storage</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="2">
+      <h1>CSS/CSS3</h1>
+      <p>Classi di oggetti, selettori</p><br>
+      <ul>
+        <li><strong>*</strong> tutti gli elementi</li>
+        <li><strong>a</strong> tutti gli elementi di questo tipo</li>
+        <li><strong>a[title]</strong> tutti gli elementi di questo tipo con questo attributo </li>
+        <li><strong>a[title="titolo"]</strong> come sopra ma attributo = titolo</li>
+        <li><strong>a:first-child</strong> tutti gli elementi a che sono primi figli</li>
+        <li><strong>a:empty</strong> Tutti gli elementi a che non hanno figli</li>
+        <li><strong>p > a</strong> Tutti gli elementi a che hanno p come padre</li>
+        <li><strong>p a</strong> Tutti gli elementi a che discendono da p</li>
+        <li><strong>#id</strong> Un elemento con id = id</li>
+        <li><strong>.class</strong> Un elemento appartenente alla classe specificata</li><br>
+        <p><strong>Sperimentate!!</strong></p>
+      </ul>
+    </div>
+
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
