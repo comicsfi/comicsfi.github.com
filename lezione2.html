@@ -126,6 +126,89 @@
       </xmp>
     </div>
 
+    <div class="step slide" data-x=2 data-y=1>
+      <h1>Funzioni</h1>
+      <xmp class="lang-js">
+        //assegno una stringa alla variabile "err"
+        err="Utente già registrato"; 
+
+        //stampo la stringa nella console
+        console.log(err); 
+        
+        //assegno una stringa alla variabile di nome "msg"
+        msg="Messaggio: "; 
+
+        //concatenazione di stringhe sulla console
+        console.log(msg + a);
+
+        //altra concatenazione di stringhe su popup
+        alert("Messaggio: " + a);
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x=3 data-y=0>
+     <h1>Strutture di controllo, IF e condizioni</h1>
+     <p>Esistono delle strutture di controllo per fare in modo di eseguire
+     solo certe porzioni di codice in base a delle condizioni:</p>
+     <xmp class="lang-js">
+     //pseudo-codice
+     if(condizione)
+       fai_questo();
+     else
+       altro(); 
+     </xmp>
+    <p>Se condizione risulta una verità logica verrà eseguita la funzione di nome "fai_questo()" altrimenti
+    la funzione "altro()";
+    </div>
+
+    <div class="step slide" data-x=3 data-y=1>
+     <h1>Strutture di controllo, IF e condizioni</h1>
+     <p>Esempi di condizioni</p>
+     <xmp class="lang-js">
+     //assegno un valore alla variabile di nome "utente" 
+     nome_utente="Rocco";
+
+     //uguaglianza
+     console.log(nome_utente=="Rocco"); //ritorna true
+     console.log(nome_utente=='Marco'); //ritorna false
+
+     //differenza
+     console.log(nome_utente!='Marco'); //ritorna true
+     console.log(nome_utente!='Rocco'); //ritorna false
+      
+     //esempio utilizzo condizione in struttura if
+     if(nome_utente=='Rocco'){
+       console.log('Sei l\'insegnante');
+     } else {
+       console.log('Sei ' + nome_utente);
+     }
+     </xmp>
+    </div>
+
+    <div class="step slide" data-x=3 data-y=2>
+     <h1>Strutture di controllo, IF e condizioni</h1>
+     <p>Esempi di condizioni sui numeri</p>
+      <xmp class="lang-js">
+   //assegno un valore alla variabile "n_utenti"
+   n_utenti=3;
+
+   console.log(n_utenti); //stampo il valore della variabile
+   console.log(n_utenti==3); //controllo l'eguaglianza, ritorna true
+   console.log(n_utenti==2); //controllo l'eguaglianza, ritorna false
+   console.log(n_utenti<5);  //uso l'operatore minore (<) ritorna true
+   console.log(n_utenti<=3); //uso l'operatore minore-uguale ritorna true
+   console.log(n_utenti!=3); //ancora l'operatore diverso, ritorna false
+   console.log(n_utenti>2);  //ovviamente c'e' anche il maggiore, qui true
+     </xmp>
+     <p><strong>IMPORTANTERRIMO!!!</strong><br>
+     L'operatore di assegnazione non è l'operatore di test di uguaglianza!!<br>
+     == e = sono costrutti PROFONDAMENTE diversi!<br>
+     Considerate anche che alcuni valori di default vengono considerati FALSI sempre,
+     una stringa vuota o il valore numerico 0.
+
+     </p>
+
+    </div>
 
 </div>
 
