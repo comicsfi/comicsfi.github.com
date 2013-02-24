@@ -1,0 +1,147 @@
+<!doctype html>
+<!-- 
+     Se stai guardando qui è un buon inizio! 
+     Proseguendo nel corso capirai meglio alcune cose, soprattutto perchè non
+     ho avuto ancora modo di commentare per bene il codice,
+     le domande in merito saranno apprezzate.
+-->
+
+<!--<html lang="en" manifest="offline.manifest">-->
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="overview" class="step" data-x="3" data-y="2" data-scale="5.0"></div>
+
+    <div class="step slide" data-x="0" data-y="0">
+      <h1>Contatti</h1>
+      <ul>
+        <li>Scrivetemi su rocco.depatto(chiocciola)gmail.com</li>
+        <li>Dispensine su <a href='http://comicsfi.github.com'>http://comicsfi.github.com</a></li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="0" data-y="1">
+      <h1>News dall'universo Mobile</h1><br>
+      <ul>
+        <li>Perchè non mentivo sostenendo che il futuro della App è HTML5.</li>
+        <li>AppMobi è stato comprato da Intel.</li>
+        <li>L'altro grande player è PhoneGap che è di Adobe.</li>
+        <li>Differenze.</li>
+      </ul>
+
+    </div>
+
+    <div class="step slide" data-x="1" data-y="0">
+      <h1>Principi di programmazione JS</h1><br>
+        <p>Ricalcheremo quello fatto in php per facilitare la comprensione.<br>
+        Tenete sempre presente che le nostre App sono sostastanzialmente paragonabili a siti web
+        quindi il nostro tool di riferimento per il test sarà il browser.
+        </p>
+    </div>
+    
+    <div class='step slide' data-x=1 data-y=1>
+      <h1>Importare script JS da HTML</h1><br>
+      <p>Come per importare dei fogli di stile in formato CSS, è possibile importare script JS da HTML, dove per il CSS
+      utilizziamo:</p>
+      <xmp>
+        <link rel='stylesheet' href='stile.css'>
+      </xmp>
+      <p>per importare script JS si utilizza:</p>
+      <xmp>
+        <script src='script.js'></script>
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=2>
+      <h1>Principi di programmazione</h1><br>
+      <p>Variabili, dichiarazione, tipi.<br>
+      Contrariamente al PHP non dobbiamo anteporre un $ per 
+      identificare le variabili, l'assegnazione è uguale:</p><br>
+      <xmp class='lang-js'>
+      a=2;      //assegna il valore 2 alla variabile "a"
+      a=2+2;    //l'assegnazione può essere anche un'operazione
+      b=a-2;    //qui "b" vale 2 (4-2) mentre "a" rimane invariata
+      a='ciao'; //assegno la stringa 'ciao' alla variabile "a"
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="3">
+      <h1>Operatori numerici</h1>
+      <xmp class='lang-js'>
+      today=1+7;        //somma
+      n=1-1;            //sottrazione
+      i=1/1;            //divisione
+      c=1*1;            //moltiplicazione, a=1
+      today++;          //incremento di a, a=2;
+      tomorrow=today++; //restituisce il valore incrementato, a=3, b=3
+      oggi=++today;     //restituisce il valore non incrementato, a=4 b=3
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x="1" data-y="4">
+      <h1>Errori</h1>
+      <xmp class='lang-js'>
+      a=8/0; //Infinity
+      boh++; //boh Undeclared
+      </xmp>
+      <p>Usiamo FireBug per trovare gli errori!</p>
+    </div>
+ 
+    <div class="step slide" data-x="1" data-y=5>
+      <h1>Operatori su stringhe</h1>
+      <xmp class='lang-js'>
+      msg="Utente già registrato"; //assegnazione
+      intestazione="Errore: ";    
+      popup_msg=intestazione+msg;  //concatenazione di stringhe
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x=2 data=y=0>
+     <h1>Prime funzioni utili</h1>
+     <p>Cominciamo con delle funzioni per avere del feedback:</p>
+     <xmp class='lang-js'>
+      alert('Test popup'); //apre un popup
+
+      //invia un messaggio di log alla console FireBug
+      console.log('Test messaggio di log');      
+      </xmp>
+    </div>
+
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
