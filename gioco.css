@@ -1,0 +1,30 @@
+body, html {
+  border: 0px;
+  padding: 0px;
+  background-color: #333;
+}
+
+/* seleziono la palla attraverso l'id */
+#ball {
+
+  /* fisso un altezza e una larghezza */
+  height: 50px;
+  width: 50px;
+
+  /* con il border radius la faccio diventare una palla 
+   * notate che il raggio del bordo è la metà delle dimensioni della palla */
+  border-radius: 25px;
+
+  /* aggiungiamo un po' di stile */
+  background-image: -webkit-gradient(linear,left top, right bottom, from(#2f9),to(#f99));
+  border: 1px solid #999;
+
+  /* la posizione è assoluta in modo che sia possibile spostare 
+   * l'oggetto a piacimento */
+  position: absolute;
+  left: 100px;
+  top: 100px;
+
+  /* ammorbidisco le transizioni 
+  -webkit-transition: all 0.01s; */
+}
