@@ -30,7 +30,7 @@
 <div id="impress">
 
     <div class="step slide" data-x="0" data-y="0">
-      <h1>Primi esperimenti</h1>
+      <h1>Primi esperimenti</h1><br>
       <ul>
         <li>Interagire con il DOM</li>
         <li>Qualche esempio senza aiuti</li>
@@ -40,10 +40,123 @@
     </div>
 
     <div class="step slide" data-x=1 data-y=0>
-     <h1>Interagire con il DOM</h1>
-     <xmp class="lang-js">
-        
+      <h1>Interagire con il DOM</h1><br>
+     <ul>
+       <li>La prima funzionalità importante di javascript che impareremo sarà quella di selezionare elementi nel DOM.</li>
+       <li>Selezionando un elemento sarà possibile cambiarne tutte le proprietà, il contenuto, lo stile, etc..</li>
+       <li>Useremo dal principio i metodi nativi del javascript per poi utilizzare una libreria come JQuery</li>
+     </ul>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=1>
+      <h1>Oggetto document</h1><br>
+      <ul>
+        <li>L'oggetto document è un oggetto presente in ogni documento HTML</li>
+        <li>Possiede moltissime proprietà tante delle quali modificabili</li>
+      </ul>
+      <xmp class="lang-js">
+        console.log(document.title);
+        console.log(document.domain);
+        console.log(document.width);
+        console.log(document.height);
+      </xmp>
+      <ul><li>...e possiede delle funzioni..</li></ul>
+      <xmp class="lang-js">
+        //seleziono un elemento nel DOM
+        document.getElementById('id_elemento');
+      </xmp>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=2>
+     <h1>Elementi nativi</h1>
+     <p>HTML</p>
+     <xmp class="lang-html">
+     ...doctype / head ...
+     <body>
+      <div id='id_elemento'>
+      </div>
+     </body>
      </xmp>
+     <p>JS</p>
+     <xmp class="lang-js">
+   //seleziono un elemento
+   var elemento = document.getElementById('id_elemento');
+   console.log(elemento);
+
+   //cambio il colore dell'elemento selezionato
+   elemento.style.color = 'orange';
+
+   //cambio il contenuto dell'elemento selezionato
+   elemento.innerHTML = 'Prova contenuto dinamico';
+     </xmp>
+    </div>
+
+    <div class="step slide" data-x=2 data-y=0>
+     <h1>JQuery</h1><br>
+     <ul>
+       <li>JQuery è bello, JQuery è meglio</li>
+       <li>Non dobbiamo patire le differenze dei vari browser</li>
+       <li>USIAMO I SELETTORI CSS PER SELEZIONARE GLI ELEMENTI!!</li>
+     </ul>
+     <xmp class="lang-js">
+      $('#id_elemento').css('color','orange'); 
+      $('#id_elemento').html('Prova contenuto dinamico');
+     </xmp>
+    </div>
+
+    <div class="step slide" data-x=2 data-y=1>
+      <h1>JS non è multithreading</h1><br>
+     <ul>
+       <li>Possiamo fare solamente una cosa alla volta.</li>
+       <li>Quindi, il nostro codice NON deve essere bloccante, altrimenti si ferma il browser!!</li>
+       <li>Esistono delle eccezioni, possiamo gestire delle operazioni asincrone come il download...</li>
+       <li>... o attivare un timer</li>
+     </ul>
+     <xmp class="lang-js">
+    //l'oggetto window e un esempio di proprietà
+    console.log(window.screenLeft);
+
+    //una funzione di prova
+    function prova(){
+      console.log("Dentro la funzione prova");
+    }
+    
+    setTimeout(prova,2000);
+     </xmp>
+   </div>
+
+    <div class="step slide" data-x=2 data-y=2>
+     <h1>setInterval</h1><br>
+     <xmp class="lang-js">
+      //solita funzione di prova
+      function prova(){
+        console.log('Dentro la funzione di prova');
+      }
+
+      setInterval(prova,1000);
+     </xmp>
+    </div>
+
+    <div class="step slide" data-x=2 data-y=3>
+     <h1>Ultimo esempio e poi cominciamo sul serio</h1>
+
+     <xmp class="lang-js">
+     
+    // memorizzo da qualche parte a che step sono arrivato
+    var step_n = 0;
+    var max_step = 10;
+    var timer;
+
+    //solita funzione di prova
+    function prova(){
+      console.log("Sono allo step " + step_n++);
+      if(step_n==max_step) clearInterval(timer);
+    }
+
+    timer = setInterval(prova,500);
+
+     </xmp>
+     
     </div>
 
 </div>

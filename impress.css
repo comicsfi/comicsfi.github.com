@@ -127,6 +127,7 @@ a:focus {
 .slide ul {
   margin-left: 51px;
   list-style: square;
+  line-height: 32px;
 }
 
 .slide .padder {
