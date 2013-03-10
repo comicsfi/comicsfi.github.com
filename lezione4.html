@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div class="step slide" data-x="0" data-y="0">
+      <h1>Esercizi, capire non è comprendere</h1><br>
+      <p>
+      Oggi faremo una serie di esercizi per ricapitolare, per ogni esercizio vi lascio 5 minuti e ne utilizzeremo
+      altri 5 per domande e approfondimenti.
+      Sono 10 esercizi in sequenza , ovvero ogni esercizio ha bisogno che il precedente sia completato per poter essere
+      portato a termine. Se qualcosa non è chiaro ci fermiamo a discuterne. Ricordate che avete Internet a disposizione!!
+      </p>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=0>
+      <h1>Esercizio 1</h1><br>
+     <ul>
+       <li>Create una pagina HTML5 completa delle sue parti fondamentali (header, body, titolo ... ) </li>
+       <li>Aggiungete almeno due link, due paragrafi e una lista contenente tre voci, annidando qualche elemento.</li>
+     </ul>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=1>
+     <h1>Soluzione 1</h1>
+     <xmp class="lang-html">  
+  <!doctype html>
+
+  <html lang='it'>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Esercizi</title>
+  </head>
+
+  <body>
+    <p><a href='http://www.google.com'>ma se ti</a> dicessi</p>
+    <ul>
+      <li><a href='http://yahoo.it'>Yahoo</a></li>
+      <li><p>Lorem ipsum antani sblindaa</p></li>
+      <li>Come se fosse ....</li>
+    </ul>
+  </body>
+
+  </html>  
+  </xmp>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=2>
+      <h1>Esercizio 2</h1><br>
+      <ul>
+        <li>Create un foglio di stile basilare da includere al documento creato (un background, qualche stile per i link).</li>
+        <li>Inserite dei commenti sia nel CSS che nell'HTML.</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x=1 data-y=3>
+      <h1>Soluzione 2</h1>
+      <p>HTML</p>
+    <xmp class="lang-html">
+    <!-- .. da qualche parte dentro <head>, inserisco un css -->
+    <link rel="stylesheet" href="stile.css" 
+          type="text/css" media="screen" charset="utf-8">
+    </xmp>
+    <p>stile.css</p>
+    <xmp class="lang-css">
+    body {
+      background-color: #444;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    a {
+      color: orange;
+      /* i link sottolineati non li sopporto */
+      text-decoration: none;
+    }
+    </xmp>
+    </div>
+
+    <div class="step slide" data-x=2 data-y=0>
+     <h1>Esercizio 3</h1>
+        <p>Create e includete uno script javascript di nome esercizi.js e verificate in qualsiasi modo che è stato caricato (conoscete almeno 4 soluzioni diverse)</p>
+    </div>
+
+  <div class="step slide" data-x=2 data-y=1>
+   <h1>Soluzione 3</h1>
+   <p>HTML</p> 
+   <xmp class="lang-html">
+   <!--  
+      sempre da qualche parte dentro head o
+      ancora meglio alla fine del body       
+    -->
+
+    <script type="text/javascript" src='esercizi.js' charset="utf-8">
+    </script>
+
+    <!-- RICORDATEVI CHE PRATICAMENTE TUTTI I TAG 
+         SI CHIUDONO, NEL DUBBIO, CHIUDETELI -->
+   </xmp>
+   <ul>
+     <li>Pannello Net in Firebug</li>
+     <li>Usando la console, scrivendo console.log("test"); all'interno di esercizi.js</li>
+     <li>Con un alert, per esempio alert("test"); all'interno di esercizi.js</li>
+     <li>Anche creando appositamente un errore di sintassi aspettandosi un feedback tra gli errori</li>
+   </ul>
+  </div>
+
+
+  <div class="step slide" data-x=2 data-y=2>
+   <h1>Esercizio 4</h1>
+   <ul>
+     <li>Nel file javascript inizializzate una variabile numerica di nome <strong>n_utenti</strong> assegnandole un numero a piacimento</li>
+      <li>Fate un controllo successivo che nel caso in cui la variabile sia maggiore di 5 mostri un popup</li>
+    </ul>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=3>
+   <h1>Soluzione 4</h1><br>
+   <xmp class="lang-js">
+     n_utenti = 5;
+
+     //controllo se ci sono più di 5 utenti
+     if( n_utenti>5 )
+     {
+       alert("Ci sono più di 5 utenti");
+     }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=4>
+   <h1>Esercizio 5</h1>
+   <p>Sapendo che per ottenere la lunghezza di una stringa si utilizza la sua proprietà .length, inizializzare
+   una stringa di nome <strong>messaggio</strong> assegnandole un valore a piacimento e mostrare il popup 
+   "La stringa x lunga n caratteri è lunga!" nel caso in cui la stringa sia più lunga di 4 caratteri e il
+   messaggio "La stringa x lunga n è corta!" nel caso in cui sia più corta, dove x è il valore della stringa
+   mentre n la sua lunghezza in caratteri.<br> <strong>Fate una cosa per volta, non cercate subito la soluzione!</strong></p>
+  </div>
+
+
+  <div class="step slide" data-x=2 data-y=5>
+    <h1>Soluzione 5</h1>
+    <xmp class="lang-js">
+    messaggio = 'prova';
+
+    if( messaggio.length > 4 )
+    {
+      alert( "La stringa " + messaggio 
+             + " lunga " + messaggio.length + " è lunga");
+    }
+    else
+    {
+      alert( "La stringa " + messaggio 
+             + " lunga " + messaggio.length + " è corta");
+    }
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=6>
+   <h1>Esercizio 6</h1>
+   <p>Come il precedente esercizio ma le stringhe sono 3, di nome studente1, studente2, studente3 contenenti i vostri nomi.</p>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=7>
+   <h1>Esercizio 7</h1>
+   <p>Ora rifatelo con una funzione chiamata check_studente_length().</p>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=8>
+   <h1>Soluzione 7</h1>
+   <xmp class="lang-js">
+   // la funzione deve prendere un parametro !!! 
+   function check_studente_name_length( nome_studente ) {
+     if( nome_studente.length > 4 )
+     {
+       alert( "La stringa " + nome_studente + " lunga " 
+              + nome_studente.length + " è lunga" );
+     } 
+     else 
+     {
+       alert( "La stringa " + nome_studente + " lunga " 
+              + nome_studente.length + " è corta" );
+     }
+   }
+
+   studente1 = 'Pippo';
+   studente2 = 'Pluto';
+   studente3 = 'Paperino';
+
+   check_studente_name_length( studente1 );
+   check_studente_name_length( studente2 );
+   check_studente_name_length( studente3 );  
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=3 data-y=0>
+   <h1>Esercizio 8</h1>
+   <ul>
+     <li>Includete JQuery all'interno del documento HTML! Scaricatelo in locale non usiamolo in remoto</li>
+     <li>Controllate che funziona!</li>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=3 data-y=1>
+   <h1>Esercizio 9</h1>
+   <ul>
+     <li>
+     Cambiamo la funzione precedente per AGGIUNGERE alla lista UL del documento, la stringa che prima 
+     veniva mostrata nel popup.
+     </li>
+     <li>Un passo per volta, di cosa hai bisogno?</li>
+     <li>Vi ricordo che per aggiungere elementi in JQuery la funzione è .append("contenuto");</li>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=3 data-y=2>
+   <h1>Soluzione 9</h1>
+   <xmp class="lang-js">  
+   function check_studente_name_length( nome_studente ) 
+   {
+     stringa = "La stringa " + nome_studente + " lunga " + 
+               nome_studente.length + " è ";
+
+     if( nome_studente.length > 4 )
+     {
+       $('ul').append("<li>" + stringa + " lunga</li>");
+     } 
+     else 
+     {
+       $('ul').append("<li>" + stringa + " corta</li>");
+     }
+   }
+
+   studente1 = 'Pippo', studente2 = 'Pluto', studente3 = 'Paperino';
+
+   check_studente_name_length( studente1 );
+   check_studente_name_length( studente2 );
+   check_studente_name_length( studente3 ); 
+   </xmp>
+    
+   </xmp>
+  </div>
+
+<div class="step slide" data-x=3 data-y=3>
+ <h1>Esercizio 10</h1>
+ <p> Nel caso in cui la lunghezza del contenuto degli LI contenuti nella pagina sia pari dovete colorarli di rosso,
+ altrimenti di arancione, usate le classi e il css.</p>
+</div>
+
+
+<div class="step slide" data-x=4 data-y=0>
+ <h1>Eventi</h1>
+ <ul>
+   <li>Lasciamo indietro alcune cose fondamentali ... </li>
+   <li>... per introdurre un po' di interazione con l'utente </li>
+   <li>All'accadere di un evento possiamo richiamare una funzione. </li>
+ </ul>
+</div>
+
+<div class="step slide" data-x=4 data-y=1>
+  <h1>Evento OnClick</h1>
+  <p>HTML</p>
+ <xmp class="lang-html">
+   <button onclick='pigiato();'>Pigia me!</button>
+ </xmp>
+ <p>JS</p>
+ <xmp class="lang-js">
+ function pigiato(){
+   alert("Hai pigiato il bottone");
+ }
+ </xmp>
+</div>
+
+<div class="step slide" data-x=4 data-y=2>
+  <h1>NO!</h1>
+  <p>Si puo' fare non vuol dire che lo dobbiamo fare!<br>
+     Inserire la logica dentro l'HTML confonde!!<br>
+     Teniamo separate la logica dalla presentazione</p>
+     <p>
+ <xmp class="lang-js">
+  //in jQuery 
+  $('button').on('click',pigiato);
+ </xmp>
+</div>
+
+
+<div class="step slide" data-x=4 data-y=3>
+ <h1>Esercizio..</h1>
+ <p>Alla pressione del bottone cambiate il colore di sfondo della pagina!</p>
+</div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
