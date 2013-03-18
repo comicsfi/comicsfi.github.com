@@ -1,0 +1,7 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(255, 255, 255)), to(#707070));
+}

@@ -1,14 +1,11 @@
-body, html {
-  padding:0px;
-  margin:0px;
-  position: absolute;
-  width: 1024px;
-  height:768px;
-  background-color: #444;
-  font-family: Helvetica;
-  font-size: 15px;
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  -webkit-overflow-scrolling: none;
+  background: -webkit-gradient(radial, 50% 5%, -10, 50% 50%, 650, from(rgb(255, 255, 255)), to(#909090));
 }
-
 
 /* seleziono la palla attraverso l'id */
 #ball {
@@ -24,15 +21,14 @@ body, html {
   border-radius: 75px;
 
   /* aggiungiamo un po' di stile */
-  border: 0px;
-  background-color: orange;
+  background: -webkit-gradient(radial, 50% 5%, 0, 55% 35%, 90, from(rgb(250,190,100)), to(rgb(100, 30, 30)));
 
   /* la posizione è assoluta in modo che sia possibile spostare 
    * l'oggetto a piacimento */
   position: absolute;
-  left: 100px;
-  top: 100px;
+  left: 250px;
+  top: 250px;
 
-  /* ammorbidisco le transizioni  */
-  -webkit-transition: all 0.6;
+  /* ammorbidisco le transizioni */
+  -webkit-transition: all 0.5s ease-out; 
 }

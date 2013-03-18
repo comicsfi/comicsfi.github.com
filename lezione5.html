@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x="0" data-y="0">
+    <h1>Lezione 5</h1>
+    <ul>
+      <li>Veloce ripassino jQuery</li>
+      <li>Eventi!!</li>
+      <li>Esempi!!</li>
+      <li>Esercizi!!</li>
+    </ul>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=0>
+   <h1>Ripassino jQuery</h1>
+    <p>La base di partenza in jQuery sono i selettori, una volta
+       selezionati degli elementi è possibile cambiarne attributi, contenuto,
+       eliminarli, copiarli, modificarli a piacimento</p>
+    <xmp class="lang-js">// leggo il nome di un attributo
+    $('selettore').attr('nome_attributo');
+
+    // imposto il valore di un attributo
+    $('selettore').attr('nome_attributo','valore_attributo');
+
+    // leggo il contenuto
+    $('selettore').html();
+
+    // imposto il contenuto 
+    $('selettore').html('<p>Posso mettere anche dell\'html qui</p>');
+
+    // leggo una proprietà dello stile
+    $('selettore').css('color');
+
+    // imposto una proprietà dello stile
+    $('selettore').css('color','orange');
+
+    // leggo il valore di un input
+    $('selettore').val();
+    </xmp>
+  </div>
+
+
+  <div class="step slide" data-x=1 data-y=1>
+   <h1>API</h1>
+   <p>Ogni libreria che vedremo possiede delle API (Application Program Interface),
+   che identificano tutte le funzionalità messe a disposizione dalla libreria stessa
+   e in quale modalità possiamo interagirci. La documentazione per jQuery ad esempio la possiamo 
+   vedere su <a href="http://api.jquery.com">api.jquery.com</a>. Questo è il posto dove cercare
+   le funzionalità di jQuery e gli esempi su come utilizzarle.</p>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=2>
+   <h1>Concatenazione di metodi jQuery</h1>
+   <p>jQuery ci offre la possibilità di concatenare metodi, in questo modo il selettore 
+   viene ricercato una sola volta cerca una sola volta.</p><br><br>
+
+   <xmp class="lang-js">
+
+   // QUESTO
+   $('selettore').attr('href','http://www.googe.com');
+   $('selettore').css('color','red');
+   
+   // puo' essere scritto così
+   $('selettore').attr('href'.'http://www.google.com').css('color','red');
+   </xmp>
+
+  </div>
+
+  <div class="step slide" data-x=2 data-y=0>
+   <h1>EVENTI!</h1>
+   <p>Il javascript è guidato dagli eventi, ovvero è possibile far eseguire porzioni di codice
+   all'accadere di alcuni eventi a nostra scelta:</p><br>
+   <ul>
+     <li>Click, Doppio Click</li>
+     <li>Focus, Blur, Change</li>
+     <li>Submit, Load</li>
+     <li>KeyPress, KeyDown, KeyUp</li>
+     <li>MouseMove, TouchMove, TouchStart</li>
+   </ul>
+  </div>
+
+
+  <div class="step slide" data-x=2 data-y=1>
+   <h1>Il load</h1>
+   <p>Problema delle dipendenze...</p><br>
+   <xmp class="lang-js">
+
+   // dichiaro una funzione di nome inizio
+   function inizio(){
+     console.log("Tutto il documento è stato caricato");
+   }
+
+   // dico a jquery (che dirà al javascript) che al termine del 
+   // caricamento del DOM e dei suoi contenuti deve chiamare la 
+   // funzione inizio 
+   $(document).on('load',inizio);
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=2>
+    <h1>Click</h1>
+<xmp class="lang-js">
+
+  // la maggior parte degli eventi ha una funzione
+  // singola di accesso 
+
+  $('selettore').click(funzione);
+  $('selettore').on('click',funzione);
+
+
+</xmp>
+
+  </div>
+
+  <div class="step slide" data-x=2 data-y=3>
+   <h1>Esercizio</h1><br>
+   <p>
+   4 elementi. Un input di tipo testo, un div informativo, un bottone cancel e un botton ok.<br>
+   Premendo OK, devo controllare il valore del campo di testo, nel caso in cui sia vuoto,
+   deve diventare rosso lo sfondo, il bordo e il testo (tonalità differenti altrimenti non si legge),
+   e nel div informativo deve comparire la scritta "Il campo è obbligatorio".
+   Nel caso in cui il campo sia minore di 5 caratteri deve diventare ugualmente rosso, e la scritta nel
+   div deve essere "Il campo deve contenere più di 4 caratteri".
+   Nel caso in cui il campo sia riempito correttamente deve mostrare "Il campo è ok"!
+   Alla pressione di cancel il campo di testo deve essere svuotato.
+
+   </p>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=4>
+   <h1>Transizioni</h1>
+   <p>Ripassino delle transizioni CSS3</p>
+   <xmp class="lang-css">
+   body {
+     -webkit-transition: all 1s;
+   }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=5>
+   <h1>Toccami</h1>
+   <p>Solitamente gli eventi vengono lanciati con un attributo che identifica l'evento e le sue proprietà.
+   Ad esempio all'evento mousemove viene associato un evento che ha le proprietà clientX e clientY che identificano
+   dove è stato mosso il mouse!</p><br>
+
+   <xmp class="lang-js">
+
+     // al movimento del mouse all'interno del body chiamo
+     // la funzione mouse_mosso
+     $('body').on('mousemove',mouse_mosso);
+
+     // stampo le coordinate del mouse sulla console
+     function mouse_mosso(evento){
+       console.log("X: " + evento.clientX);
+       console.log("Y: " + evento.clientY);
+     }
+
+   </xmp>
+    
+  </div>
+
+  <div class="step slide" data-x=2 data-y=6>
+   <h1>Toccami II (un po' di matematica)</h1>
+   <xmp class="lang-js">
+    // genera un numero random tra 0 e 1
+    Math.random();
+
+    // come faccio per generare un numero tra 10 e 100 ?
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=7>
+   <h1>Toccami III</h1>
+   <p>Una pallina non deve mai essere toccata dal mouse, quindi si sposta casualmente quando il mouse tenta di andarci sopra.</p>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
