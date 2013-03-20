@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+  <div class="step slide" data-x=0 data-y=0>
+   <h1>Transizioni</h1>
+   <p>Ripassino delle transizioni CSS3</p><br>
+   <xmp class="lang-css">
+   body {
+     -webkit-transition: all 1s;
+   }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Toccami</h1>
+   <p>Solitamente gli eventi vengono lanciati con un attributo che identifica l'evento e le sue proprietà.
+   Ad esempio all'evento mousemove viene associato un evento che ha le proprietà clientX e clientY che identificano
+   dove è stato mosso il mouse!</p><br>
+
+   <xmp class="lang-js">
+
+     // al movimento del mouse all'interno del body chiamo
+     // la funzione mouse_mosso
+     $('body').on('mousemove',mouse_mosso);
+
+     // stampo le coordinate del mouse sulla console
+     function mouse_mosso(evento){
+       console.log("X: " + evento.clientX);
+       console.log("Y: " + evento.clientY);
+     }
+
+   </xmp>
+    
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Toccami II (un po' di matematica)</h1><br>
+   <xmp class="lang-js">
+    // genera un numero random tra 0 e 1
+    Math.random();
+
+    // come faccio per generare un numero tra 10 e 100 ?
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Toccami III</h1>
+   <p>Una pallina non deve mai essere toccata dal mouse, quindi si sposta casualmente quando il mouse ci passa sopra.</p>
+ </div>
+
+  <div class="step slide" data-x=1 data-y=0>
+    <h1>Un passetto alla volta.</h1>
+    <ul>
+      <li>Quali elementi deve contenere il documento? (parte statica).</li>
+      <li>Di che eventi ho bisogno?</li>
+      <li>Su che elementi?</li>
+      <li>Ho delle scelte? Quali? </li>
+      <li>Ho bisogno di variabili? Posso farne a meno?</li>
+      <li>Quali proprietà devo cambiare e a che elementi del DOM?</li>
+      <li>Quali valori devono avere?</li>
+      <li>Scrivete PRIMA solamente i commenti del codice che intendete scrivere,
+          e ad ogni step controllate che faccia quello preventivato.</li>
+      <li>Stesso esercizio ma deve spostarsi anche quando il mouse e' vicino al margine destro dello schermo,
+      almeno 10px </li>
+
+
+    </ul>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>

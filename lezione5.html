@@ -146,54 +146,6 @@
 
    </p>
   </div>
-
-  <div class="step slide" data-x=2 data-y=4>
-   <h1>Transizioni</h1>
-   <p>Ripassino delle transizioni CSS3</p>
-   <xmp class="lang-css">
-   body {
-     -webkit-transition: all 1s;
-   }
-   </xmp>
-  </div>
-
-  <div class="step slide" data-x=2 data-y=5>
-   <h1>Toccami</h1>
-   <p>Solitamente gli eventi vengono lanciati con un attributo che identifica l'evento e le sue proprietà.
-   Ad esempio all'evento mousemove viene associato un evento che ha le proprietà clientX e clientY che identificano
-   dove è stato mosso il mouse!</p><br>
-
-   <xmp class="lang-js">
-
-     // al movimento del mouse all'interno del body chiamo
-     // la funzione mouse_mosso
-     $('body').on('mousemove',mouse_mosso);
-
-     // stampo le coordinate del mouse sulla console
-     function mouse_mosso(evento){
-       console.log("X: " + evento.clientX);
-       console.log("Y: " + evento.clientY);
-     }
-
-   </xmp>
-    
-  </div>
-
-  <div class="step slide" data-x=2 data-y=6>
-   <h1>Toccami II (un po' di matematica)</h1>
-   <xmp class="lang-js">
-    // genera un numero random tra 0 e 1
-    Math.random();
-
-    // come faccio per generare un numero tra 10 e 100 ?
-   </xmp>
-  </div>
-
-  <div class="step slide" data-x=2 data-y=7>
-   <h1>Toccami III</h1>
-   <p>Una pallina non deve mai essere toccata dal mouse, quindi si sposta casualmente quando il mouse tenta di andarci sopra.</p>
-  </div>
-
 </div>
 
 <script src="impress.js"></script>
