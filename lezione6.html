@@ -21,17 +21,72 @@
 
 <div id="impress">
   <div class="step slide" data-x=0 data-y=0>
-   <h1>Transizioni</h1>
-   <p>Ripassino delle transizioni CSS3</p><br>
+   <h1>Transizioni CSS3</h1>
+   <p>
+    CSS3 introduce nuove funzionalità che ci permettono di animare e produrre effetti prima relegati
+    a flash o a lente funzioni javascript, vediamo di che si tratta.
+   </p>
    <xmp class="lang-css">
-   body {
-     -webkit-transition: all 1s;
-   }
+   a {
+     transition-property: all;
+     transition-duration: 1s;
+   }  </xmp>
+   <p>Supporto dei browser....</p><br>
+    <xmp class="lang-css">
+   a {
+       -webkit-transition-property: all; // chrome / safari
+       -webkit-transition-duration: 1s;
+
+       -moz-transition-property: all; // firefox 
+       -moz-transition-duration: 1s;
+
+       -o-transition-property: all; // opera
+       -o-transition-duration: 1s; 
+   } 
    </xmp>
+ </div>
+
+   <div class="step slide" data-x=0 data-y=1>
+    <h1>Transizioni II</h1>
+    <p>
+    <strong>property</strong> identifica quale proprietà viene assegnata alla transizione (border, color, background, all, left, all, etc..)<br><br>
+    <strong>duration</strong> definisce la durata...<br><br>
+    <strong>delay</strong> definisce il ritardo per iniziare la transizione <br><br>
+    <strong>timing-function</strong> definisce il tipo di transizione (linear,ease,ease-in...)<br><br>
+    è possibile combinare transizioni diverse per gli stessi oggetti....</p><br>
+    <xmp class="lang-css">
+    a {
+      -webkit-transition-property: border, background;
+      -webkit-transition-duration: 1s, 2s;
+    }
+    </xmp>
+    <p>Considerate che è possibile inserire racchiudere in classi CSS tutte queste proprietà e assegnare
+    di volta in volta agli elementi del DOM le classi desiderate</p>
   </div>
 
-  <div class="step slide" data-x=0 data-y=1>
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Trasformazioni 2D CSS3</h1><br>
+   <p>Un'altra particolarità introdotta in CSS3 sono le trasformazioni.</p>
+   <xmp class="lang-css">
+   a:hover {
+     -webkit-transform: rotate(40deg);
+     -webkit-transform-origin: 0px 0px;
+   }
+   </xmp>
+   <p>
+   <strong>rotate</strong> per ruotare <br>
+   <strong>translate</strong> per spostate<br>
+   <strong>scale</strong> per scalare l'elemento<br>
+   <strong>skew</strong> per distorcere<br>
+   <strong>transform-origin</strong> per indicare l'origine della trasformazione<br>
+   </p>
+
+  </div>
+
+
+  <div class="step slide" data-x=1 data-y=0>
    <h1>Toccami</h1>
+
    <p>Solitamente gli eventi vengono lanciati con un attributo che identifica l'evento e le sue proprietà.
    Ad esempio all'evento mousemove viene associato un evento che ha le proprietà clientX e clientY che identificano
    dove è stato mosso il mouse!</p><br>
@@ -52,7 +107,7 @@
     
   </div>
 
-  <div class="step slide" data-x=0 data-y=2>
+  <div class="step slide" data-x=1 data-y=1>
    <h1>Toccami II (un po' di matematica)</h1><br>
    <xmp class="lang-js">
     // genera un numero random tra 0 e 1
@@ -62,12 +117,13 @@
    </xmp>
   </div>
 
-  <div class="step slide" data-x=0 data-y=3>
+  <div class="step slide" data-x=1 data-y=2>
    <h1>Toccami III</h1>
    <p>Una pallina non deve mai essere toccata dal mouse, quindi si sposta casualmente quando il mouse ci passa sopra.</p>
+   <p>Quali alternative ho.....</p>
  </div>
 
-  <div class="step slide" data-x=1 data-y=0>
+  <div class="step slide" data-x=1 data-y=3>
     <h1>Un passetto alla volta.</h1>
     <ul>
       <li>Quali elementi deve contenere il documento? (parte statica).</li>

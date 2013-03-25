@@ -109,7 +109,9 @@ strong {
 */
 a {
     color: orange;
+    padding: 5px;
     text-decoration: none;
+    border-radius: 10px;
 
     -webkit-transition: 0.5s;
     -moz-transition:    0.5s;
@@ -120,7 +122,8 @@ a {
 
 a:hover,
 a:focus {
-  text-decoration: underline;
+  color: #222;
+  background-color: #ccf;
 }
 
 
