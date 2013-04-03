@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+  <div class="step slide" data-x=0 data-y=0>
+   <h1>Ripasso</h1>
+   <ul>
+     <li>Variabili</li>
+     <li>Costrutti</li>
+     <li>Funzioni</li>
+     <li>jQuery / selettori </li>
+     <li>Eventi</li>
+   </ul>
+   <h1>Variabili complesse</h1>
+   <ul>
+     <li>Array</li>
+     <li>Oggetti</li>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=0>
+   <h1>Variabili</h1>
+   <p>Forniscono la possibilità di salvare valori all'interno di contenitori nominali,
+   possono contenere numeri, stringhe, caratteri, date, funzioni, collezioni di tutte le precedenti tipologie (array)
+   e oggetti complessi.</p><br>
+   <p>Ricordate la differenza tra variabili globali e locali.</p>
+   <p>Ricordate di dar loro dei nomi utili al riconoscimento della loro funzione</p><br>
+   <xmp class="lang-js">
+   var n_utenti = 2;
+   var url = "http://comicsfi.github.com";
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=1>
+   <h1>Costrutti || condizioni</h1><br>
+   <p>Abbiamo visto i due tipi di condizioni..</p> 
+   <xmp class="lang-js">
+   // l'if / else
+   if(condizione){
+     alert("La condizione risulta vera");
+   }
+   else {
+     alert("La condizione risulta falsa");
+   }
+
+   // lo switch
+   switch(variabile) {
+     case 'valore_1':
+       alert("Variabile vale valore_1");
+       break;
+     case 'valore_2':
+       alert("Variabile vale valore_2");
+       break;
+     default:
+       alert("Nessuno dei valori precedenti");
+   }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=2>
+   <h1>Costrutti || cicli</h1>
+   <p>.. e il ciclo for</p>
+   <xmp class="lang-js">
+
+   for(var counter=0;counter<=10;counter++)
+   {
+     alert("Counter vale " + counter);
+   }
+
+
+   //altro esempio
+   for(var counter=0;counter<=10;counter++)
+   {
+     /* 
+       l'operatore % (modulo) restituisce il resto della divisione, 
+       se counter è dispari, un numero dispari diviso 2 torna sempre 
+       resto 1, che all'interno di una condizione è considerato VERO! 
+     */
+     if(counter%2)      
+     {
+       alert("Counter è " + dispari);
+     }
+   }
+   </xmp>
+  </div>
+
+
+  <div class="step slide" data-x=1 data-y=3>
+   <h1>Funzioni</h1>
+   <p>Uno dei costrutti principali di ogni linguaggio di programmazione!</p>
+   <p>Permette il riuso del codice, la suddivisione in problemi semplici dei programmi
+   complessi, ed è funzionale al nostro ragionamento. Ogni volta che ci si presenta
+   un problema generalizzabile, scriviamo una funzione che lo risolve.</p>
+  <xmp class="lang-js">
+  //restituisce l'orientamento del dispositivo
+  function get_orientation()
+  {
+    if(document.height>document.width)
+    {
+      return 'PORTRAIT';
+    }
+
+    return 'LANDSCAPE';
+  }
+
+  if(get_orientation()=='LANDSCAPE')
+  {
+    alert( "Questa app funziona solamente in modalità PORTRAIT," +
+           "per favore ruota il dispositivo");
+  }
+  </xmp>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=4>
+   <h1>jQuery / Selettori</h1>
+   <p>Abbiamo iniziato a studiare jQuery, che aggiunge un livello di astrazione 
+   al javascript fornito dai browser e ci permette di mantenere la compatibilità
+   tra browser differenti.</p>
+   <p>Una delle funzionalità principali di jQuery sono i selettori, con cui è possibile
+   selezionare elementi del DOM per poi giocarci a piacimento.</p>
+   <p>I selettori sono come i selettori CSS3.</p>
+   <xmp class="lang-js">
+    $("selettore");
+   </xmp>
+
+   <p>Ecco una buona <a href='http://www.w3schools.com/cssref/css_selectors.asp'>lista di selettori CSS</a></p>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=5>
+    <h1>jQuery / Metodi</h1>
+    <p>Una volta selezionati degli elementi è possibile utilizzare i metodi jQuery per interrogarne proprietà e contenuti
+    e ovviamente modificarli, cancellarli, aggiungerne..</p>
+    <xmp class="lang-js">
+  //esempi dei metodi più comuni, ricordate sempre http://api.jquery.com
+
+  $("selettore").html(); //legge il contenuto html
+  $("selettore").html("contenuto"); //imposta il contenuto
+
+  $("selettore").attr('href'); //legge un attributo
+  $("selettore").attr('href','http://google.com'); //imposta un attributo
+
+  $("selettore").css('color'); //legge una proprietà css
+  $('selettore').css('color','#FFF'); //imposta una proprietà css
+  
+  // legge o scrive il valore degli input/select/textarea
+  $('selettore').val();     
+  </xmp>
+  <p>Cercate e provate i metodi hasClass, addClass, removeClass, toggleClass.
+  Esercizio, implementiamo la funzione toggleClass come se non esistesse già, solamente attraverso
+  addClass, removeClass, hasClass</p>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=6>
+   <h1>jQuery / Eventi</h1>
+   <p>L'esecuzione del nostro codice è orienta agli eventi, eseguiamo operazioni
+   al succedere di particolari condizioni, alla pressione di un tasto, quando l'utente
+   sposta il mouse in un particolare posto, al download completato... </p>
+   <p>Per legare l'esecuzione di una funzione ad un evento usiamo il metodo .on
+   di jQuery:</p>
+   <xmp class="lang-js">
+   // in questo modo diciamo di eseguire la funzione nome_funzione
+   // quando verrà scatenato l'evento nome_evento sugli elementi
+   // selezionati dal selettore specificato
+   $('selettore').on('nome_evento',nome_funzione);
+   </xmp>
+   <p>Quasi tutti gli eventi hanno una funzione specifica per cui possono essere utilizzati
+   senza il .on(), ma con il nome dell'evento stesso:
+   <xmp class="lang-js">
+   //esegui nome_funzione al click di ogni elemento selezionato
+   $('selettore').click(nome_funzione);
+   </xmp>
+   <p>Ecco una <a href='http://api.jquery.com/category/events/'>lista di eventi</a></p>
+
+ </div>
+
+ <div class="step slide" data-x=1 data-y=7>
+  <h1>jQuery / Eventi II</h1>
+   <p>Prima di tutto dobbiamo capire quando il DOM è completamente caricato, con
+   l'evento ready, il primo a venire invocato.</p><br>
+   <xmp class="lang-js">
+   //funzione di inizializzazione
+   function start(){
+      // qui dentro tutto inseriamo tutto il codice di inizializzazione,
+      // colleghiamo eventi a funzioni, etc...
+   }
+
+   $(document).ready(start);
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=0>
+   <h1>Array</h1>
+   <p>Gli array sono collezioni di variabili, sono variabili speciali che possono
+   contenere più valori contemporaneamente.</p>
+    <xmp class="lang-js">
+  var studenti = ["Marco","Antonio","Giovanni"];
+  studenti[0]; //questo è "Marco"
+  studenti.length //quanti studenti ci sono
+
+  // scorrere tutto un array
+  for(var i=0;i<studenti.length;i++)
+  {
+    // studenti[i] è lo studente corrente...
+    // ad esempio...
+    // toUpperCase è una funzione delle stringhe 
+    // per trasformare in maiuscolo
+    studenti[i] = studenti[i].toUpperCase();
+  }
+  console.log(studenti);
+    </xmp>
+    <p>Le stringhe sono array</p>
+  </div>
+
+
+  <div class="step slide" data-x=2 data-y=1>
+   <h1>Array || Esercizio I</h1>
+   <p>Calcola la media delle età degli studenti</p>
+   <xmp class="lang-js">
+   var eta_studenti = [20,22,25,30,33];
+   </xmp>
+   <p>Fatevi le giuste domande, come farei normalmente? cosa mi serve?</p>
+  </div>
+
+  <div class="step slide" data-x=2 data-y=2>
+   <h1>Array || Esercizio II</h1>
+   <p>Aggiungere in una lista &lt;ul&gt; solamente gli studenti il cui nome
+      cominci o finisca per 'a' (nelle condizioni l'operatore OR è ||).
+      Fate sempre una cosa per volta, capite cose volete fare, scrivetelo in italiano,
+      e poi cominciate a tradurre....</p>
+      <xmp class="lang-js">
+    var studenti = ['antonio','anita','giulia','marco','olga','giovanni'];
+      </xmp>
+  </div>
+
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
