@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+  <div class="step slide" data-x=0 data-y=0>
+   <h1>OGGETTI</h1>
+   <p>Praticamente tutto in Javascript è un oggetto, una stringa, un numero, un array, una funzione sono oggetti.<br>
+   Inoltre, in javascript potete definire i vostri oggetti.  <br>
+   Un oggetto è un particolare tipo di dato che può contenere proprietà e funzioni (metodi).
+   </p>
+   <xmp class="lang-js">
+    // ad esempio per le proprietà
+    var stringa = "ciao";
+    console.log(stringa.length);
+
+    var utenti = [ 'admin','user','guest' ];
+    console.log(studenti.length);
+
+    // per i metodi
+
+    // gli oggetti stringa forniscono il metodo toUpperCase
+    stringa.toUpperCase(); 
+
+    // gli array forniscono il metodo sort 
+    console.log(utenti.sort());
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Creare oggetti</h1>
+   <p>In javascript ci sono tanti modi per creare oggetti!<br>
+   La sintassi è:<ul> <li>Racchiudere tra graffe l'oggetto</li><li>all'interno
+     delle graffe specificare le proprietà e il loro valore separato da un :</li></ul>
+   </p>
+   <xmp class="lang-js">
+    var utente = { nome: "Rocco", cognome: "De Patto", eta: 29 };
+    console.log(utente.nome);
+    console.log(utente['nome']);
+    console.log(utente.nome.length);
+
+    var utenti = [ utente, {nome: "Ospite",cognome: "Ospite",eta: 20 } ];
+
+    // numero di utenti
+    console.log(utenti.length);
+
+    // il primo utente
+    console.log(utenti[0].nome);
+    console.log(utenti[0]['nome']);
+    console.log(utenti[0].nome.toUpperCase());
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Variabili con funzioni</h1>
+   <p>Le variabili possono contenere oltre che numeri, stringhe, oggetti, array, anche delle funzioni</p><br>
+   <xmp class="lang-js">
+   var prova = function(){ console.log("Sono la funzione prova"); };
+   prova();
+
+   var utente = { nome: "Rocco", 
+                  cognome: "De Patto", 
+                  eta: 29,
+                  maggiorenne: function(){ return (this.eta>=18); }
+                };
+
+   if( utente.maggiorenne() ) 
+     console.log("Mostro materiale per adulti");
+   else 
+     console.log("No no no, chiedi il permesso ai genitori");
+
+   </xmp>
+ </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Creare oggetti</h1>
+   <xmp class="lang-js">
+   
+  function Utente(nome,cognome,eta)
+  {
+    this.cognome = cognome;
+    this.eta = eta;
+    this.preferenze = preferenze;
+    this.maggiorenne = function(){ return this.eta>=18; };
+  }
+
+  var utente1 = new Utente('Rocco','De Patto',29);
+  var utente2 = new Utente('Ospite','Ospite',20);
+
+  console.log(utente1.nome);
+  console.log(utente2.nome);
+  console.log(utente1.maggiorenne());
+
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+   <h1>Array di oggetti</h1>
+   <xmp class="lang-js">
+   function Utente(nome,eta,sesso,preferenza){
+     this.nome=nome;
+     this.eta=eta;
+     this.sesso=sesso;
+     this.preferenza=preferenza; // m f b 
+     this.compatibile = function(utente)
+     {
+       if( ( this.preferenza==utente.sesso || this.preferenza=='b' ) && 
+           ( utente.preferenza==this.sesso || utente.preferenza=='b' ) ) {
+           return true;
+       }
+       return false;
+     };
+   }
+
+   var utente1 = new Utente("Rocco",29,'m','f');
+   var utente2 = new Utente("Pippo",20,'m','f');
+   var utente3 = new Utente("Paperina",25,'f','m');
+
+   console.log(utente1.compatibile(utente2));
+   console.log(utente1.compatibile(utente3));
+   </xmp>
+  </div>
+  <div class="step slide" data-x=1 data-y=1>
+   <h1>Esercizio</h1>
+   <p>Questo esercizio lo facciamo insieme.</p><p>
+   In una pagina ho un form contenente 4 campi, nome, eta, sesso e preferenza sessuale.</p>
+   <p>Nome è un input testuale, età numerico, sesso una tendina a scelta che puo' essere m o f,
+    preferenza una tendina che puo' valere m, f o b, pensando di default l'utente etero.</p> 
+    <p> Ho due tasti, uno di inserimento, che mi aggiunge un utente (nel caso i campi siano tutti compilati)
+    con le proprietà specificate nel form e uno che una volta premuto mi mostri una lista
+    con tutte le "coppie" possibili!
+
+   </p>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
