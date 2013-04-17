@@ -1,0 +1,42 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+  <title>Scheletro App Framework</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+  <link rel="stylesheet" type="text/css" href="css/icons.css" /> 
+
+  <link rel="stylesheet" type="text/css" href="css/jq.ui.css" title="default"/>
+
+  <script type="text/javascript" charset="utf-8" src="jq.mobi.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="jq.ui.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="script.js"></script> 
+
+</head>
+<body>
+
+  <div id='jQUi'>
+    <div id='header'></div>
+
+    <div id='content'>
+
+      <div class='panel' title='Prima pagina' id='first'>
+        <a class='button' href='#second'>Vai alla seconda pagina</a>
+        <a class='button' id='show_mask'>Mostro mask</a>
+      </div>
+
+      <div class='panel' title='Seconda pagina' id='second' data-transition='up'>
+        <a class='button' href='#first'>Vai alla prima pagina</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
