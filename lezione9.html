@@ -34,7 +34,9 @@
   <div class="step slide" data-x=0 data-y=1>
       <h1>jqMobi / AppFramework</h1>
       <p>Lo strumento che useremo per aiutarci nella creazione di app 
-      lo trovate <a href='http://app-framework-software.intel.com'>qui</a>.</p>
+      lo trovate <a href='http://app-framework-software.intel.com'>qui</a>.<br>
+      ma soprattutto la documentazione parte da <a href=http://app-framework-software.intel.com/documentation.php'>qui</a>
+      </p>
   </div>
 
   <div class="step slide" data-x=0 data-y=2>
@@ -42,8 +44,98 @@
    <p>Includiamo i file jq.mobi.js (per farla breve è un sostituto tarato per il mobile di jquery),
    e jq.ui.js che aggiunge un layer per facilitarci la vita fornendoci funzionalità di alto
    livello (pannelli, history, sideBar, manuBar, navBar, showMask, plugins).</p>
-   <p>Includiamo i css di default e quello delle icone se le necessitiamo</p>
+   <p>Includiamo i css di default e quello delle icone se le necessitiamo</p><br>
+   <xmp class="lang-js">
+
+ <script type="text/javascript" charset="utf-8" src="jq.mobi.js"></script> 
+ <script type="text/javascript" charset="utf-8" src="jq.ui.js"></script> 
+
+ <link rel="stylesheet" type="text/css" href="css/icons.css"> 
+ <link rel="stylesheet" type="text/css" href="css/jq.ui.css">
+
+   </xmp>
   </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Viewport</h1>
+   <p>Pixel is not pixel!!! Nei dispositivi mobili, un pixel CSS NON corrisponde al
+   pixel del dispositivo !!! Nei display retina ad esempio per ogni pixel abbiamo
+   4 subpixel (ognuno puo' visualizzare un proprio colore ovviamente)!!<br>
+   Se visualizziamo un sito con un container principale di 900px su iphone viene
+   visualizzato a tutto schermo nonostante la larghezza orizzontale sia 320px,
+   questo perchè subisce uno zoom-out, ovvero si basa su un'altra larghezza ovvero
+   la viewport (che per iphone ha un default di 980px, quindi scala fino a raggiungere
+   la dimensione corretta).
+   Usando il tag viewport impostiamo noi la grandezza del viewport!!</p>
+
+   <xmp class="lang-js">
+   
+  <!-- in mobile pixel is not a pixel -->
+  <meta name="viewport" content="width=device-width, 
+                     initial-scale=1, maximum-scale=1">
+
+   </xmp>
+
+ </div>
+
+ <div class="step slide" data-x=0 data-y=4>
+  <h1>Fullscreen / Icona</h1>
+  <xmp class="lang-js">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="todo.png"> 
+  </xmp>
+ </div>
+
+ <div class="step slide" data-x=1 data-y=0>
+  <h1>jqmobi</h1>
+  <p>Layout di base: </p><br>
+
+  <xmp class="lang-js">
+  <!-- main container DIV for jQUi-->
+  <div id='jQUi'>
+
+    <!-- header div at the top -->
+    <div id='header'></div>
+
+    <!-- from here you can add panels -->
+    <div id='content'>
+
+      <!-- a panel is a div with "panel" class, 
+          a title and a lot of optional parameters -->
+      <div class='panel' title='Home' id='home'>
+      </div>
+  
+      ....
+  </xmp>
+    <p>guardiamo un esempio per navbar e menu.</p>
+ </div>
+
+<div class="step slide" data-x=1 data-y=1>
+ <h1>Le classi contano</h1>
+ <ul>
+   <li>bottoni =&gt; button</li>
+   <li>icon =&gt; icon name</li>
+   <li>forms =&gt; jq-ui-forms</li>
+ </ul>
+</div>
+
+<div class="step slide" data-x=1 data-y=2>
+ <h1>Cambiare panel</h1>
+  <p>Per cambiare panel possiamo usare le ancore...</p>
+
+  <xmp class="lang-js">
+
+  <div class='panel' title='Add TODO' id='add'>  ...
+  
+  <a href='#add' class='icon add'>Add</a>
+
+  </xmp>
+
+  <p>oppure</p><br>
+  <xmp class="lang-js">
+  $.ui.loadContent('#add');
+  </xmp>
+ </div>
 
 
 </div>

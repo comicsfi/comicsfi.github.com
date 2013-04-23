@@ -1,0 +1,69 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+  <title>TODO</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+
+  <!-- in mobile pixel is not a pixel -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- special meta for apple device => full screen app for safari !! -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="todo.png"> 
+
+  <!-- include jqmobi stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/icons.css"> 
+  <link rel="stylesheet" type="text/css" href="css/jq.ui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- include jsmobi, jqui and our script -->
+  <script type="text/javascript" charset="utf-8" src="jq.mobi.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="jq.ui.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="script.js"></script> 
+  <script type="text/javascript" charset="utf-8" src="todo.js"></script> 
+
+</head>
+
+<body>
+
+  <!-- main container DIV for jQUi-->
+  <div id='jQUi'>
+
+    <!-- header div at the top -->
+    <div id='header'></div>
+
+    <!-- from here you can add panels -->
+    <div id='content'>
+
+      <!-- a panel is a div with "panel" class, a title and a lot of optional parameters -->
+      <div class='panel' title='Todo list' id='main'>
+        <ul id='main_todo_list'>
+        </ul>
+      </div>
+
+      <div class='panel' title='Completed' id='completed'>
+      </div>
+
+      <div class='panel' title='Add TODO' id='add'>
+        <h3>Title</h3>
+        <input class='jq-ui-forms' id='new_todo_title'>
+        <h3>Content</h3>
+        <textarea class='jq-ui-forms' id='new_todo_content'></textarea><br>
+        <a id='add_button' class='icon add'>ADD</a>
+
+      </div>
+
+    </div>
+
+    <!-- bottom navbar -->
+    <div id='navbar'>
+      <a href='#main' class='icon home'>TODO</a>
+      <a href='#add' class='icon add'>Add</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
