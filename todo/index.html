@@ -31,15 +31,45 @@
 
     <!-- header div at the top -->
     <div id='header'></div>
+    <nav>
+      <div class='title'>List</div>
+      <ul id='menu_todo_list'>
+      </ul>
+    </nav>
 
     <!-- from here you can add panels -->
     <div id='content'>
 
       <!-- a panel is a div with "panel" class, a title and a lot of optional parameters -->
-      <div class='panel' title='Todo list' id='main'>
-        <ul id='main_todo_list'>
-        </ul>
+      <div class='panel' title='Todo list' id='main' data-tab='navbar_home'>
+        <br>
+        <div id='main_todo_list'>
+
+          <div class='task' task_id='100'>
+            <button class='button todo_edit right'>Edit</button> 
+            <p class='task_title'>Title1</p>
+            <p class='task_content'>Content</p>
+          </div>
+
+          <div class='task' task_id='101'>
+            <button class='button todo_edit right'>Edit</button>
+            <p class='task_title'>Title2</p>
+            <p class='task_content'>Content2</p>
+          </div>
+
+        </div>
       </div>
+
+      <div class='panel' title='Edit TODO' id='edit'>
+        <h3>Title</h3>
+        <input class='jq-ui-forms' id='edit_task_title'>
+        <h3>Content</h3>
+        <textarea class='jq-ui-forms' id='edit_task_content'></textarea><br>
+        <input type='hidden' id='edit_task_id'>
+        <a id='edit_button' class='button icon edit'>EDIT</a>
+
+      </div>
+
 
       <div class='panel' title='Completed' id='completed'>
       </div>
@@ -49,7 +79,7 @@
         <input class='jq-ui-forms' id='new_todo_title'>
         <h3>Content</h3>
         <textarea class='jq-ui-forms' id='new_todo_content'></textarea><br>
-        <a id='add_button' class='icon add'>ADD</a>
+        <a id='add_button' class='button icon add'>ADD</a>
 
       </div>
 
@@ -57,8 +87,8 @@
 
     <!-- bottom navbar -->
     <div id='navbar'>
-      <a href='#main' class='icon home'>TODO</a>
-      <a href='#add' class='icon add'>Add</a>
+      <a id='navbar_home' href='#main' class='icon home'>TODO</a>
+      <a id='navbar_add' href='#add' class='icon add'>Add</a>
     </div>
 
   </div>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+   <h1>Eventi, delegate</h1>
+   <p>
+   Ad ogni evento è possibile associare come visto una funzione,
+   all'interno di questa funzione <strong>this</strong> identifica l'oggetto che ha
+   scatenato l'evento, mentre il primo argomento è un oggetto che identifica
+   l'evento con le sue proprietà (coordinate in caso di un mousemove ad esempio)
+   e che esporta i metodi inerenti all'evento stesso!</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Eventi</h1>
+   <p>
+   Gli eventi vengono propagati, solitamente dal più specifico al meno specifico,
+   passando per tutti i padri intermedi!</p>
+   <p>E' possibile fermare la propagazione degli eventi attraverso la funzione <strong>stopPropagation()</strong>!</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Eventi, delegate</h1>
+   <p>
+   Gli eventi possono essere associati solamente ad elementi già presenti nel DOM!<br>
+   Aggiungendo elementi nuovi nel DOM, bisognerebbe riassociare a questi gli eventi interessati.
+   Con ciò si deve far attenzione a non associare doppiamente un evento scaturito da un elemento ad una funzione!
+   Una soluzione elegante è utilizzare il metodo <strong>delegate</strong> che utilizza il parent
+   per associare gli eventi ai figli desiderati.</p>
+   <xmp class="lang-html">
+    <div id='parent'>
+      <p class='todo_title'>Title</p>
+      <p class='todo_content'>Content</p>
+      <p class='todo_title'>Title2</p>
+      <p class='todo_content'>Content2</p>
+    </div>
+   </xmp>
+   <xmp class="lang-js">
+     $('#parent').delegate('.todo_title','click',handler);
+   </xmp>
+   <p>In questo modo, associamo la funzione al click del parent che controllerà se il target
+   è il nostro selettore e in quel caso scatenerà la funzione associata</p>
+  </div>
+
+
+  <div class="step slide" data-x=1 data-y=0>
+   <h1>Strutture dati</h1>
+   <p> Ipotizziamo di dover modificare un task, sarà necessario in qualche modo
+   identificare su quale task vogliamo effettuare le modifiche, nonchè raccogliere
+   le informazioni relative allo stesso.</p>
+   <p>Anche per le operazioni che dovremmo effettuare successivamente (si pensi ad
+   un cerca o alla possibilità di ordinare i task per data o per priorità) necessiteremo
+   sicuramente di una struttura dati su cui agire. NO il DOM non è fatto per questo!</p>
+  </div>
+
+  
+  <div class="step slide" data-x=1 data-y=2>
+   <h1>Esercizio</h1>
+   <p>Come sempre, uno step alla volta:</p>
+   <ul>
+     <li>creiamo un panel apposito per
+      attuare le modifiche di un task (cosa serve che contenga?)</li>
+      <li>Quando lo mostriamo? Aggiungiamo un bottone ad ogni task mostrato!</li>
+      <li>Come mostriamo il titolo e il contenuto del task selezionato nel nuovo pannello?</li>
+      <li>Come modifichiamo il task?</li>
+      <li>Come modifichiamo il contenuto nel DOM?</li>
+   </ul>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
