@@ -3,24 +3,43 @@ $(document).ready(function(){
 
   // static events bindings
   $('#add_button').on('click', app.add_todo );
-  $('#edit_button').on('click', app.edit_todo );
+  $('#select_tasks_status').on('change',app.select_tasks_status);
 
   // dynamic events bindings
   $('#main_todo_list').delegate('.task_title','click', app.toggle_todo_content );
-  $('#main_todo_list').delegate('.todo_edit','click', app.edit_todo_content );
-  //
-
-  // test event propagation/
-  /*
-  $('body').on('click', app.test_click );
-  $('#jQUi').on('click', app.test_click );
-  $('.panel').on('click', app.test_click );
-  $('#main_todo_list').on('click', app.test_click );*/
+  $('#main_todo_list').delegate('.task_status','click', app.set_task_status );
 
 });
 
 
 var app = {};
+
+app.select_tasks_status = function(){
+  var selected_status = $(this).val();
+  console.log(selected_status);
+  $('#main_todo_list').html('');
+
+  switch(selected_status){
+    case 'todo':
+      $.each(todo.tasks,function(id,task){ if(!task.done) todo.add_to_ui(task); });
+      break;
+    case 'done':
+      $.each(todo.tasks,function(id,task){ if(task.done) todo.add_to_ui(task); });
+      break;
+    case 'all':
+      $.each(todo.tasks,function(id,task){ todo.add_to_ui(task); });
+      break;
+  }
+
+  
+
+
+};
+
+app.set_task_status = function(){
+  var task_id = $(this).parent().attr('id').split('_')[1];
+  todo.toggle_task_status(task_id);
+};
 
 app.edit_todo = function(){
 

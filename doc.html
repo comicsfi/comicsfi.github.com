@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Links</h1>
+    <ul>
+      <li><a href='http://app-framework-software.intel.com/api/index.html'>App Framework API (jqmobi/jqui)</a></li>
+      <li><a href='http://app-framework-software.intel.com/documentation.php'>App Framework Helper Guide</a></li>
+    </ul>
+  </div>
+
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Riprendiamo la nostra Todo List</h1>
+    <p>Proviamo ad immaginare ad assegnare delle proprietà ai nostri task,
+    ad esempio uno stato (fatto/da fare).</p>
+    <p>Nelle App avremo sempre bisogno di 2 posti da aggiornare (UI/dati)
+    e un posto per recuperare i dati</p>
+    <p>La UI è temporanea, ci giochiamo, la cambiamo, cancelliamo, modifichiamo ...</p>
+    <p>Abbiamo bisogno di strutture dati per memorizzare i nostri dati e poi visualizzarli
+    quando richiesto e nel formato richiesto.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Cominciamo dalla UI</h1>
+   <p>Abbiamo bisogno di una select per selezionare tre opzioni, per
+   permetterci di visualizzare i task completati, quelli da fare,
+   oppure tutti, quindi cominciamo da li e associamogli un evento change
+   per monitorare i cambiamenti del valore scelto dall'utente.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Aggiornare la UI?</h1>
+   <p>Quello che vogliamo che accada al cambiamento della selezione
+   è visualizzare i task in base al valore selezionato, quindi dobbiamo
+   prima di tutto fare in modo di poter cambiare questo stato, partendo
+   sempre dalla UI aggiungiamo un tasto ad ogni task che ci permette
+   di cambiare il suo stato.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Cambiare i dati</h1>
+   <p>Alla pressione del tasto dobbiamo cambiare lo stato del task
+   inerente a quel tasto (collegamento tra UI e dati). Come facciamo
+   a sapere a quale task si riferisce quel tasto? Usiamo gli attributi e gli id
+   nelle strutture dati. Gli id sono importanti, servono per identificare univocamente
+   gli oggetti, gli elementi, devono essere UNIVOCI, non possiamo basarci sulle altre
+   proprietà (titolo, descrizione, etc...)..</p>
+ </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+   <h1>Un po' di funzioni comode</h1>
+     <p>selezionando un elemento dal DOM con .parent() trovo il padre!</p>
+     <xmp class="lang-js">
+       <div id='container'>
+         <span id='content'>Content</span>
+       </div>
+        .....
+        $('#content').parent().attr('id'); // "container"
+     </xmp>
+<br>
+     <p>E' possibile esplodere le stringhe in un array specificando un separatore</p>
+     <xmp class="lang-js">
+     var a = "task_2";
+     a.split('_'); // ['task','2'];
+     a.split('_')[1]; // '2';
+     </xmp>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=5>
+   <h1>If ternario</h1>
+   <p>Esiste una versione compatta dell'if molto utile da utilizzare
+   per costruire stringhe o per assegnare valori a variabili basati solamente
+   su una condizione:</p>
+   <xmp class="lang-js">
+   var status = true;
+
+   // if normale
+   if(status==true) //oppure if(status) che è equivalente
+     toggle_status=false;
+   else
+     toggle_status=true;
+    
+   // if ternario
+   var toggle_stato = (stato?false:true);
+
+   // altro esempio
+   var i = 2;
+   console.log("Il numero i è " + (i%2?"dispari":"pari"));
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=6>
+   <h1>Ciclare ancora..</h1>
+   <p>Per ciclare le nostre strutture dati abbiamo parecchi metodi...
+   dipende di cosa abbiamo bisogno, filtrare dei valori tra i nostri array,
+   ciclare tutti i valori....</p>
+
+   <xmp class="lang-js">
+   // un normale for
+   var dati = [1,2,3,4,5,6];
+   var n_dati = dati.length; //cache lunghezza
+   for(var i=0;i<n;i++)
+   {
+     console.log(dati[i]);
+   }
+   </xmp>
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=7>
+   <h1>.. e ancora</h1>
+   <p>semplifichiamoci la vita:</p>
+   <xmp class="lang-js">
+   var dati = [1,2,3,4,5,6];
+   dati.each(function(index,dato){console.log(dato);});
+   </xmp>
+  </div>
+    
+  <div class="step slide" data-x=0 data-y=8>
+   <h1>... e ancora</h1>
+   <xmp class="lang-js">
+   var dati = [1,2,3,4,5,6];
+   var dati_pari = dati.map(function(dato){ if(!dato%2) return dato; });
+   </xmp>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>

@@ -43,19 +43,13 @@
       <!-- a panel is a div with "panel" class, a title and a lot of optional parameters -->
       <div class='panel' title='Todo list' id='main' data-tab='navbar_home'>
         <br>
+        
+        <select class='jq-ui-forms' id='select_tasks_status'>
+          <option value='all'>All</option>
+          <option value='todo'>Todo</option>
+          <option value='done'>Done</option>
+        </select>
         <div id='main_todo_list'>
-
-          <div class='task' task_id='100'>
-            <button class='button todo_edit right'>Edit</button> 
-            <p class='task_title'>Title1</p>
-            <p class='task_content'>Content</p>
-          </div>
-
-          <div class='task' task_id='101'>
-            <button class='button todo_edit right'>Edit</button>
-            <p class='task_title'>Title2</p>
-            <p class='task_content'>Content2</p>
-          </div>
 
         </div>
       </div>
