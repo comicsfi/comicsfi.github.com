@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Dati & Strutture dati</h1>
+    <p>Torniamo a parlare di dati.</p>
+    <p>I dati sono gli oggetti che gestisce, modifica, salva, presenta, crea ogni nostra applicazione.</p>
+    <p>Il come strutturare i dati è una decisione che spetta a noi in base alla realtà del problema
+    che ci troviamo a modellare di volta in volta.</p>
+    <p>Oggi vi chiederò di strutturare dei dati in base a varie problematiche, esattamente come
+    si crea prima una tabella con i suoi campi per un database, o come si progetta una biblioteca
+    con i suoi scaffali, i suoi ripiani e i suoi corridoi.<br> Come potete immaginare questo lavoro
+    viene fatto PRIMA di avere dei dati reali ma è bene tenere in mente degli esempi di dati
+    reali che poi utilizzarenno la nostra struttura, ovvero che poi andranno a riempirla.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Come partire</h1>
+   <p>Gli strumenti che abbiamo a disposizione per strutturare i nostri dati sono
+   le variabili e ne abbiamo solamente di 4 tipi: i numeri (interi o a virgola mobile), 
+   le stringhe, gli array e gli oggetti:</p>
+   <p>I numeri sono autoesplicativi, possono essere sommati, sottratti, divisi, moltiplicati e altro ancora.</p>
+   <p>Le stringhe sono serie di caratteri in sequenza, contengono parole, frasi, password, nomi, contenuti di email,
+   indirizzi email, quello che scriviamo nella chat di facebook, il titolo di un libro, il vostro cognome.</p>
+
+   <xmp class="lang-js">
+   var n_utenti = 12;
+
+   function aggiungi_utente(){
+     n_utenti++; //incremento il numero di utenti
+   }
+   
+   var nome_utente = "Rocco"; //una stringa
+
+   </xmp>
+
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Array</h1>
+   <p>Gli array sono liste di altre variabili e possono contenere tutte le altre tipologie di variabili in
+   ogni posizione, possono contenere una lista di nomi di studenti, una lista di cose da fare, una lista di nomi di amici,
+   una lista di titoli di libri, una lista di autori di libri, una lista di editori di libri, una lista di libri.
+   Agli array possiamo aggiungere elementi, togliere elementi, cercare elementi nella lista, clonare una lista....</p>
+   <xmp class="lang-js">
+   // creo una lista di STRINGHE!
+   var lista_amici = ['marco','mario','antonio','giovanna','marianna'];
+   console.log(lista_amici[0]); // prende il primo amico
+   lista_amici[0] = 'stefano'; // modifica il primo amico
+   lista_amici.push('pippo'); // aggiunge un amico
+
+   //restituisce la posizione nella lista dell'elemento cercato
+   console.log(lista_amici.indexOf('pippo'));    
+
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Oggetti</h1>
+   <p>Gli oggetti (anche chiamati dizionari) hanno la possibilità di avere un valore per proprietà nominali,
+   possiamo associare ad una proprietà di un oggetto un qualsiasi valore, ad esempio possiamo avere un oggetto
+   utente con le proprietà età (ed un suo valore numerico), nome (una stringa), cognome (una stringa), 
+   password (una stringa), amici (una lista di stringhe, o una lista di oggetti utente ognuno con le sue proprietà).</p>
+   <xmp class="lang-js">
+   // creo un oggetto chiamato utente con le proprietà nome, cognome, 
+   // eta, amici (un array)
+   var utente = { nome: "Rocco", cognome: "De Patto", 
+                  eta: 29, amici: ['tanti','troppi'] };
+
+   // stampo la proprietà nome dell'oggetto utente
+   console.log(utente.nome);
+
+   // cerco se l'utente di nome Rocco ha un amico chiamato "pippo"
+   // indexOf torna -1 se non trova nulla, altrimenti l'indice del 
+   // record trovato nella lista
+   console.log( utente.amici.indexOf('tanti') );
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+   <h1>Un passetto avanti</h1>
+   <p>Quando iniziamo a strutturare i nostri dati, dobbiamo sempre tenere presente
+   quali operazioni necessitano i nostri dati, queste operazioni saranno le nostre funzioni.</p><br>
+   <p>Abbiamo una lista di utenti? Dobbiamo aggiungerne? Cancellarne? Abilitarli/disabilitarli?
+   Mandargli un messaggio via mail? Dobbiamo capire per ognuna di queste operazioni
+   di quali informazioni necessitiamo per interagire con la nostra struttura dati.</p>
+ </div>
+
+  <div class="step slide" data-x=0 data-y=5>
+   <h1>Qualche esempio</h1>
+   <p>Abbiamo una cassettiera con 3 cassetti, questa cassettiera puo' contenere solamente libri.
+   Le operazioni che possiamo effettuare su questa cassettiera sono:</p>
+   <ul>
+     <li>Inserire un libro in un cassetto</li>
+     <li>Svuotare un cassetto</li>
+     <li>Mostrare il contenuto di un cassetto</li>
+     <li>Cercare un libro</li>
+     <li>Prendere un libro</li>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=6>
+   <h1>La cassettiera</h1>
+   <p>Dunque siccome ogni cassetto puo' contenere una lista di libri,
+   per ogni cassetto avremo un array. quindi il cassetto uno sarà un array di
+   titoli di libri. Possiamo considerare la libreria come un array di cassetti,
+   con all'interno 3 elementi i quali contengono ognuno la loro lista di libri.</p>
+   <xmp class="lang-js">
+   /* Inizializzo la cassettiera, con 3 cassetti attualmente vuoti */
+   var cassettiera = [[],[],[]];
+   </xmp>
+   <p>La lista dei libri del primo cassetto è contenuta dentro cassettiera[0], quella
+   del secondo cassetto in cassettiera[1]</p>
+   <p>Per aggiungere un libro ho bisogno di sapere in che cassetto inserirlo e quale libro
+   sto inserendo, quindi la funzione aggiungi_libro_in_cassetto avrà 2 parametri:</p><br>
+   <xmp class="lang-js">
+   function aggiungi_libro_in_cassetto(titolo_libro, cassetto) {
+     cassettiera[cassetto].push(titolo_libro);
+   }
+   </xmp>
+
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=7>
+  <h1>Provo subito la funzione</h1>
+
+  <xmp class="lang-js">
+    // aggiungo un libro nel primo cassetto
+    aggiungi_libro_in_cassetto("Out of control",0);
+
+    // stampo il contenuto del primo cassetto
+    console.log( cassettiera[0] );
+
+    // a questo punto posso fare la funzione che mostra
+    // il contenuto di un cassetto, ho bisogno di sapere solamente
+    // il numero del cassetto
+    function mostra_contenuto_cassetto(cassetto){
+      console.log(cassettiera[cassetto]);
+    }
+
+    // e anche quella per svuotare un cassetto
+    function svuota_cassetto(cassetto){
+      cassettiera[cassetto] = [];
+    }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=8>
+   <h1>Cercare..</h1>
+   <p>Cercare un libro in un cassetto è semplice (devo cercare un valore in un array => indexOf)</p>
+   <xmp class="lang-js">
+function cerca_libro_in_cassetto(titolo_libro,cassetto)
+{
+  var libri_cassetto = cassettiera[cassetto];
+
+  var posizione_libro_in_cassetto = libri_cassetto.indexOf(titolo_libro);
+
+  if(posizione_libro_in_cassetto>-1)
+  {
+    console.log("Libro trovato alla posizione " 
+                + posizione_libro_in_cassetto 
+                + " nel cassetto " + cassetto);
+  }
+  else
+  {
+    console.log("Libro non trovato nel cassetto " + cassetto);
+  }
+}
+   </xmp>
+
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=9>
+   <h1>Più Concisi</h1>
+   <xmp class="lang-js">
+   function cerca_libro_in_cassetto(titolo_libro,cassetto)
+   {
+
+     if(cassettiera[cassetto].indexOf(titolo_libro)>-1)
+     {
+       console.log("Trovato!");
+     }
+     else
+     {
+       console.log("NON trovato!");
+     }
+
+   }
+   </xmp>
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=10>
+   <h1>Cercare in tutti i cassetti..</h1>
+   <p>Perchè non utilizzare la funzione per cercare in un cassetto su tutti e 3 i cassetti?</p>
+   <xmp class="lang-js">
+   function cerca_libro(titolo_libro)
+   {
+
+     var n_cassetti = 3; // ? meglio cassettiera.length; perchè?
+
+     for(var cur_cassetto=0;cur_cassetto<n_cassetti;cur_cassetto++)
+     {
+       console.log( "Cerco il libro " + titolo_libro + 
+                    " nel cassetto " + cur_cassetto );
+       cerca_libro_in_cassetto(titolo_libro,cur_cassetto);
+     }
+
+   }
+   </xmp>
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=11>
+   <h1>Prendere un libro</h1>
+   <xmp class="lang-js">
+   function prendi_libro(titolo_libro){
+
+     //controllo se il libro è in cassettiera
+     cerca_libro(titolo_libro);
+
+     // ehi, ma qui ho bisogno di un valore di ritorno...
+     // per togliere un libro da un cassetto devo
+     // eliminare un elemento dall'array del cassetto
+     // corrispondente... come si fa? di cosa ho bisogno?
+     // dell'indice.. come lo trovo? perche' non me lo faccio
+     // passare dalla funzione cerca ?
+   }
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=0>
+   <h1>Esercizi per casa</h1>
+   <p>La cassettiera diventa un oggetto con la proprietà cassetti
+   che contiene la lista che fino ad ora abbiamo chiamato cassettiera.<br>
+   Questo oggetto ha le funzioni che abbiamo visto sopra, quindi
+   io da qualche parte potro' scrivere:
+   <xmp class="lang-js">
+  cassettiera.aggiungi_libro_in_cassetto("Uno, Nessuno, Centomila",1);
+   </xmp>
+   Ogni cassetto puo' contenere massimo 5 libri!!
+   </p>
+  </div>
+
+  <div class="step slide" data-x=1 data-y=1>
+   <h1>Esercizio II</h1>
+   <p>Create una struttura dati per contenere una lista di task! 
+   L'oggetto che gestisce il tutto si deve chiamare todo!<br>
+   Ogni task deve avere un titolo, un contenuto e una lista di categorie
+   di appartenenza. E' possibile aggiungere un task con tutte le sue proprietà (di default
+   ogni task non appartiene a nessuna categoria),è possibile cercare un task il cui
+   titolo contenga una stringa (come cerco se c'e' una stringa dentro una stringa? usate
+   internet), mostrare tutti i task, mostrare tutti i task di una particolare categoria.
+   Se finite, cercate di capire come assegnare o togliere una categoria da un determinato
+   task! Se riuscite fatelo!
+   </p>
+  </div>
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
