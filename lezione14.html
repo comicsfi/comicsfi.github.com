@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Esercizi sugli array</h1><br>
+    <p><strong>Funzioni sugli array</strong></p><br>
+    <ul>
+      <li>aggiungere elementi (push)</li>
+      <li>rimuovere elementi (pop,splice)</li>
+      <li>selezionare un elemento (array[indice])</li>
+      <li>modificare un elemento (array[indice]=valore)</li>
+      <li>cercare un elemento (indexOf)</li>
+      <li>selezionare più elementi secondo una condizione (filter)</li>
+      <li>trasformare ogni elemento (map)</li>
+      <li>trasformare in stringa (join)</li>
+    </ul>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Esercizi</h1>
+   <p>Quello che non finiamo lo portate la prossima lezione!<br> AVETE INTERNET, USATELO!</p>
+   <p>Avete una base di partenza per gli esercizi <a href='eserzici.html'>qui</a> l'html e <a href='esercizi.js'>qui</a> il js!</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>Esercizio 1</h1>
+   <p>Attraverso un ciclo for aggiungete 10 elementi all'array di nome lista
+   che contengano i valori da 10 a 19 e mostratelo sulla console.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>Esercizio 2</h1>
+   <p>Come sopra ma i valori devono contenere il valore inserito dall'utente all'interno
+   di un input box con id "campo" concatenato ad un numero da 0 a 9.</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+   <h1>Esercizio 3</h1>
+   <p>Svuotare l'array di nome lista e riempirlo con 10 valori casuali da 100 a 255.</p>
+ </div>
+
+ <div class="step slide" data-x=0 data-y=5>
+  <h1>Esercizio 4</h1>
+  <p>Cambiare il colore di sfondo della pagina con la sintassi background-color: rgb(r,g,b); usando
+  come valore del rosso uno a caso dei 10 valori dell'array riempito in precedenza e 100 per i valori del verde e del blu.<p>
+ </div>
+
+ <div class="step slide" data-x=0 data-y=6>
+   <h1>Esercizio 5</h1>
+   <p>Cercare l'esistenza di un elemento dal valore 200 nell'array e mostrare il risultato nel p con id "output".
+   Se esiste visualizzare "Trovato" e la sua posizione altrimenti visualizzare "Non trovato"!</p>
+ </div>
+
+ <div class="step slide" data-x=0 data-y=7>
+  <h1>Esercizio 6</h1>
+  <p>Rimuovere dall'array l'elemento con il valore più vicino a 200!<br>
+  In alternativa, rimuovere l'elemento più piccolo con il valore maggiore di 200!
+  Se ci state mettendo troppo passate a quello successivo e questo ve lo pensate a casa!!</p>
+ </div>
+
+ <div class="step slide" data-x=0 data-y=8>
+  <h1>Esercizio 7</h1>
+  <p>Inserire una lista di li dentro l'ul con id "lista_output" che contenga i valori dell'array</p>
+ </div>
+
+  <div class="step slide" data-x=0 data-y=9>
+    <h1>Esercizio 8</h1>
+    <p>Come sopra ma solamente con i valori pari</p>
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=10>
+   <h1>Esercizio 9</h1>
+   <p>Come sopra ma solo se il checkbox con id 'pari' è checked altrimenti solamente i dispari!</p>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
