@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Storage dei dati (in locale e in remoto)</h1><br>
+    <p>Ora che abbiamo imparato a gestire i dati nella sessione corrente,
+    abbiamo bisogno di salvare questi dati in modo che siano disponibili
+    per le sessioni successive, o su dispositivi differenti.</p><br>
+    <p>Nel mondo del web questo si ottiene usando le sessioni (pensate ad
+    un blog), nel mondo del mobile usiamo altre funzionalità.</p><br>
+    <p>Questo non vuol dire che non possiamo usare nel web le funzionalità
+    che vedremo ora (il contrario è più problematico nonchè di dubbia utilità).</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>What we need</h1>
+   <p>La conservazione locale dei dati è sempre stata un'area dove le applicazioni
+   native sono state avvantaggiate rispetto alle web application.<br><br> Nel web
+   si sono sempre utilizzati i cookies ma presentano per i nostri scopi delle gravi
+   lacune, in primis il fatto che sono limitati a 4Kb di dati.<br><br>Quello che
+   abbiamo bisogno invece è tanto spazio, sul client, persistente ad un refresh della pagina,
+   e che non è trasmesso necessariamente al server.</p>
+  </div>
+  <div class="step slide" data-x=0 data-y=2>
+   <h1>localStorage</h1>
+   <p>HTML5 introduce una funzionalità per ottenere questo, si chiama localStorage.</p><br>
+   <p>localStorage è un oggetto globale che permette di salvare localmente dei dati
+   in formato chiave-valore (quindi come un dizionario o un oggetto), solamente
+   che i valori possono contenere solamente stringhe.</p><br>
+   <p>Le principali funzioni che vedremo saranno setItem e getItem.</p><br>
+   <xmp class="lang-js">
+   localStorage.setItem(chiave,valore);
+
+   // sessione successiva
+   var valore = localStorage.getItem(chiave);
+
+   localStorage.setItem('username','Rocco');
+
+   //sessione successiva
+   var username = localStorage.getItem('username');
+   console.log(username);
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>E array e oggetti?</h1>
+   <p>E se volessimo salvare localmente dei dati più complessi di semplici stringhe?
+   come ad esempio la nostra lista di task?</p><br>
+   <p>Avete già visto in PHP un modo per trasformare oggetti complessi in stringhe
+   e di fare l'operazione inversa. Questa è un'operazione utile in tantissime occasioni,
+   per salvare oggetti all'interno di database, trasmettere dal client al server degli oggetti,
+   o per esempio per usare localStorage. Parliamo di JSON</p>
+   <p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+   <h1>JavaScript Object Notation</h1>
+   <p>Per trasformare qualsiasi tipo di variabile in stringa in PHP si usa json_encode
+   e per l'operazione inversa json_decode.</p><br>
+   <p>In javascript si utilizza JSON.stringify e JSON.parse</p>
+   <p>E' un formato standard quindi una stringa JSON formata in PHP si può leggere
+   dal javascript!</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=5>
+    <h1>Esempi</h1>
+    <xmp class="lang-js">
+    var user = { name:'Rocco',surname:'De Patto',
+                age:29,friends:['pippo','pluto'] };
+
+    // trasformo l'oggetto in una stringa
+    var json_user = JSON.stringify(user);
+    console.log(json_user);
+
+    // back to original object (in another session)
+    var user = JSON.parse(json_user);
+    console.log(user.name);
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=6>
+    <h1>JSON => localStorage</h1>
+    <p>A questo punto possiamo salvare oggetti complessi con localStorage</p><br>
+    <xmp class="lang-js">
+    // ho un oggetto
+    var tasks = [ {title:'Fare i compiti',content:'Esercizi..'},
+                  {title:'Fare spesa',content:'Pane, Latte'} ];
+
+    var json_tasks = JSON.stringify(tasks);
+
+    localStorage['tasks'] = json_tasks;
+
+    // in una sessione successiva per ripristinare i nostri tasks:
+    var tasks = localStorage['tasks'];
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=7>
+    <h1>Infine</h1>
+    <p>Ovviamente avremo bisogno di ripristinare i dati
+    salvati al momento opportuno (quando?) e salvarli al momento
+    opportuno (quando?).
+  </div>
+
+  <div class="step slide" data-x=1 data-y=0>
+   <h1>E in remoto?</h1>
+  </div>
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
