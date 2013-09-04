@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang='it'>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Scuola Internazionale di Comics | Web Design Advanced 2012/2013 | Mobile application</title>
+    <meta name="author" content="Rocco De Patto" />
+
+    <link href="impress.css" rel="stylesheet" />
+    <link href="prettify/prettify.css" rel="stylesheet" />
+    
+    <!-- <link rel="shortcut icon" href="favicon.png" />
+     <link rel="apple-touch-icon" href="corso.png" /> -->
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by this presentation, so you are presented with a simplified version of it.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  <div class="step slide" data-x=0 data-y=0>
+    <h1>Riassunto del corso (I)</h1><br>
+   <ul>
+     <li>Universo Mobile (smartphone, tablet, multitouch, app)</li>
+     <li>App Native / Web App</li>
+     <li>Quindi HTML5/CSS3 e jqmobi/jquery</li>
+     <li>AppFramework</li>
+   </ul>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=1>
+   <h1>Riassunto del corso (II)</h1>
+     <p>Rinfrescata HTML</p>
+     <xmp>
+        <!doctype html>
+        <html>
+          <head>
+            <title>Anatomia pagina HTML</title>
+          </head>
+          <body>
+            <h1>Titolo</h1>
+            <p>Piccolo paragrafo di testo</p>
+            <a href='http://www.google.com'>Link a Google</a>
+          </body>
+        </html>
+     </xmp>
+    <ul>
+      <li>Tag</li>
+      <li>Attributi (class,id,href,hidden,required,tabindex,spellcheck...)</li>
+    </ul>
+  </div>
+
+
+  <div class="step slide" data-x=0 data-y=2>
+    <h1>HTML5</h1>
+    <p>Con HTML5 vengono introdotte tantissime possibilità:
+    <ul>
+      <li>Nuovi elementi semantici: section, header, nav, article, footer</li>
+      <li>Video e Audio</li>
+      <li>Geolocalizzazione</li>
+      <li>Web Storage, Local Storage</li>
+      <li>WebRTC, WebGL, Canvas, SVG, WebComponents e molto altro..</li>
+    </ul>
+    </p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=3>
+   <h1>CSS e selettori</h1>
+   <p>Classi di oggetti, selettori</p><br>
+      <ul>
+        <li><strong>*</strong> tutti gli elementi</li>
+        <li><strong>a</strong> tutti gli elementi di questo tipo</li>
+        <li><strong>a[title]</strong> tutti gli elementi di questo tipo con questo attributo </li>
+        <li><strong>a[title="titolo"]</strong> come sopra ma attributo = titolo</li>
+        <li><strong>a:first-child</strong> tutti gli elementi a che sono primi figli</li>
+        <li><strong>a:empty</strong> Tutti gli elementi a che non hanno figli</li>
+        <li><strong>p > a</strong> Tutti gli elementi a che hanno p come padre</li>
+        <li><strong>p a</strong> Tutti gli elementi a che discendono da p</li>
+        <li><strong>#id</strong> Un elemento con id = id</li>
+        <li><strong>.class</strong> Un elemento appartenente alla classe specificata</li><br>
+      </ul>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=4>
+    <h1>Programmazione JS</h1><br>
+    <p>Forniamo di logica l'interfaccia..</p>
+    <p>nell'index.html includiamo uno script</p>
+   <xmp>
+  <script src='script.js'></script>  
+   </xmp>
+   <p>in script.js</p>
+   <xmp class='lang-js'>
+ /***  script.js ***/
+ var n_studenti = 6;
+ var nome = "Ciao";
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=5>
+   <h1>Programmazione JS</h1>
+     <p>Condizioni</p>
+     <xmp class="lang-js">
+      if(n_studenti>5)
+        alert("Ci sono più di 5 studenti");
+      else
+        alert("Ci sono meno di 5 studenti");
+     </xmp>
+    <p>Cicli</p>
+    <xmp class="lang-js">
+      for(int i=0; i<10; i++)
+      {
+        alert(i);
+      }
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=6>
+    <h1>Funzioni</h1>
+    <xmp class="lang-js">
+    function controlla_studenti(n){
+      if(n_studenti>5)
+        alert("Ci sono più di 5 studenti");
+      else
+        alert("Ci sono meno di 5 studenti");
+    }
+
+    // richiamo la funzione controlla_studenti 2 volte
+    controlla_studenti(5);
+    controlla_studenti(6);
+    </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=7>
+   <h1>Console JS</h1>
+   <p>Abbiamo imparato l'uso fondamentale della console chrome!</p>
+   <xmp class="lang-js">
+   console.log("Scrivo nella console di chrome!");
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=8>
+   <h1>JQuery</h1>
+   <p>JQuery, selettori e modifiche al DOM!</p>
+   <xmp class="lang-js">
+     $('#id_elemento').css('color','orange'); 
+     $('#id_elemento').html('Prova contenuto dinamico');   
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=9>
+   <h1>Eventi</h1>
+   <xmp class="lang-js">
+     $('#bottone').on('click',funzione);
+   </xmp>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=10>
+   <h1>Transizioni/trasformazioni e CSS3</h1>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=11>
+   <h1>Variabili complesse</h1>
+   <p>Array e oggetti</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=12>
+   <h1>Finalmente il mobile</h1>
+   <p>AppFramework, jqMobi</p>
+  </div>
+
+  <div class="step slide" data-x=0 data-y=13>
+   <h1>Storage dei dati</h1>
+   <p>JSON, localStorage</p>
+  </div>
+
+
+</div>
+
+<script src="impress.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="jquery.min.js"></script>
+<script>
+  $(document).ready( function(){
+    console.log("Ready");
+    $('xmp').addClass('lang-html').addClass('prettyprint');
+    prettyPrint();
+    
+    impress().init();
+  });
+
+</script>
+
+</body>
+</html>
