@@ -233,7 +233,7 @@ Nelle condizioni è possibile utilizzare gli operatori booleani come nei linguag
 `&&` (vero se entrambe le condizioni sono verificate, e, congiunzione, moltiplicazione)
 ```javascript
 
-if (temperatura > 20 and umidita > 80) {
+if (temperatura > 20 && umidita > 80) {
 	alert("accendi ventilatore");
 }
 ````
@@ -242,7 +242,7 @@ if (temperatura > 20 and umidita > 80) {
 ### OR
 `||` (vero se una delle condizioni è vera, o, disgiunzione, somma)
 ```javascript
-if (livello_pm10 > 100 or tipologiaEuroAuto < 3) {
+if (livello_pm10 > 100 || tipologiaEuroAuto < 3) {
 	alert("Non puoi circolare con pm10 sopra i 100 o con un auto EURO3");
 }
 ```
