@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Rocco De Patto">
+  <title>Javascript Base   Sinervis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Javascript Base <br> Sinervis</h1>
+  <h2 class="author">Rocco De Patto</h2>
+  <h3 class="date">Ottobre 29, 2017</h3>
+</section>
+
+<section><section id="javascript" class="titleslide slide level1"><h1>Javascript</h1></section><section id="caratteristiche" class="slide level2">
+<h1>Caratteristiche</h1>
+<ul>
+<li>Interpretato</li>
+<li>Debolmente tipato</li>
+<li>Orientato agli eventi</li>
+<li>Supporto oggetti</li>
+<li>ECMAScript standard</li>
+<li>Solitamente gira nel browser ma non necessariamente, però ha delle utili funzionalità per interagire con esso (accesso al <a href="https://it.wikipedia.org/wiki/Document_Object_Model">DOM</a>, eventi)</li>
+</ul>
+</section><section id="programmare" class="slide level2">
+<h1>Programmare</h1>
+<style>
+    div.sourceCode {
+        font-size: 1.3em;
+    }
+
+    .reveal {
+        font-size: 27px;
+        color: #2d373a;
+    }
+
+    .reveal p {
+        text-align: left;
+    }
+
+    .reveal blockquote {
+        text-align: left;
+        padding-left: 45px;
+        font-size: 1.3em;
+        border-left: 5px solid;
+        background: #eee;
+    }
+
+    body {
+        background: white;
+    }
+
+    .container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container textarea {
+        width: 50%;
+    }
+
+    .container .output {
+        width: 50%;
+    }
+
+    .reveal pre.sourceCode {
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #bbb;
+        border-left: 5px solid #bbb;
+        background: #f5f5f5;
+        padding: 5px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    li > code,
+    p  > code {
+        border-radius: 6px;
+        color: black;
+        background: #f4f4f4;
+        padding: 0px 4px !important;
+    }
+</style>
+<p>La programmazione è l'arte di far fare ad un computer quello che noi vogliamo.</p>
+</section><section id="come" class="slide level2">
+<h1>Come</h1>
+<p>Si danno sequenze di comandi da eseguire e l'interprete le esegue.<br />
+Per ogni linguaggio di programmazione esiste una sintassi e delle regole grammaticali.</p>
+<p>Per il Javascript le impareremo in queste lezioni.</p>
+</section><section id="cosa" class="slide level2">
+<h1>Cosa</h1>
+<p>In quasi ogni linguaggio di programmazione esistono dei concetti astratti che ci aiutano a modellare la realtà delle problematiche che i programmi devono risolvere:</p>
+<ul>
+<li>Istruzioni</li>
+<li>Variabili</li>
+<li>Istruzioni condizionali</li>
+<li>Cicli</li>
+<li>Metodi / funzioni</li>
+</ul>
+</section></section>
+<section><section id="istruzioni" class="titleslide slide level1"><h1>Istruzioni</h1></section><section id="what" class="slide level2">
+<h1>What?</h1>
+<p>Sono i comandi che possiamo impartire.</p>
+</section><section id="esempi" class="slide level2">
+<h1>Esempi</h1>
+<p>Aprire una finestra di avviso:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">alert</span>(<span class="st">&quot;Avviso di errore!&quot;</span>)<span class="op">;</span></code></pre></div>
+<p>abbiamo appena chiamato una funzione di nome <code>alert</code></p>
+</section><section id="la-console" class="slide level2">
+<h1>La console</h1>
+<p>Il primo interprete che useremo è la console dei DevTools. In questa tab è possibile impartire comandi javascript validi e quindi ci permette di sperimentare a nostro piacimento.</p>
+</section></section>
+<section><section id="variabili" class="titleslide slide level1"><h1>Variabili</h1></section><section id="i-dati" class="slide level2">
+<h1>I dati</h1>
+<p>Nei computer ci sono solo dati.</p>
+</section><section id="variabili-1" class="slide level2">
+<h1>Variabili</h1>
+<p>Le variabili sono i riferimenti verso dati immagazzinati nella memoria del computer.<br />
+Hanno quindi un <strong>nome</strong> che ci permette di accedere al dato che contengono. Esistono tanti tipi di variabili, i numeri, le stringhe, le date, liste di variabili, oggetti, funzioni.<br />
+In javascript le variabili si dichiarano con la keyword <code>var</code>, poi si specifica il nome.<br />
+Per assegnare un valore lo si pone dopo l'uguale.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> livello_pm10 <span class="op">=</span> <span class="dv">110</span><span class="op">;</span></code></pre></div>
+</section><section id="variabili-2" class="slide level2">
+<h1>Variabili</h1>
+<p>Alla variabile è possibile riassegnare un altro valore (senza specificare nuovamente <code>var</code>)</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">livello_pm10 <span class="op">=</span> <span class="dv">90</span><span class="op">;</span></code></pre></div>
+</section><section id="operatori" class="slide level2">
+<h1>Operatori</h1>
+<p>Sulle variabili è possibile effettuare delle operazioni attraverso degli operatori (come in matematica). Ad esempio è possibile sommare un numero ad una variabile o una variabile ad un'altra:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> livello_pm10        <span class="op">=</span> <span class="dv">110</span><span class="op">;</span>
+<span class="kw">var</span> livello_pm10_ieri   <span class="op">=</span> <span class="dv">130</span><span class="op">;</span>
+<span class="kw">var</span> media_pm10_ierioggi <span class="op">=</span> (livello_pm10_ieri<span class="op">+</span>livello_pm10)/<span class="dv">2</span><span class="op">;</span></code></pre></div>
+</section><section id="operatori-numerici" class="slide level2">
+<h1>Operatori numerici</h1>
+<p>Gli operatori numerici sono come nella matematica delle elementari:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="dv">2+2</span><span class="op">;</span> <span class="co">// 4</span>
+<span class="dv">2</span><span class="op">*</span><span class="dv">2</span>  <span class="co">// 4</span>
+<span class="dv">2-4</span>  <span class="co">// -2</span>
+<span class="dv">4</span>/<span class="dv">2</span>  <span class="co">// 2</span>
+<span class="dv">3</span>/<span class="dv">2</span>  <span class="co">// 1.5 (numeri non interi)</span>
+<span class="dv">2+2</span><span class="op">*</span><span class="dv">3</span> <span class="co">// priorità a * e / come in matematica</span></code></pre></div>
+</section><section id="operatori-sulle-stringhe" class="slide level2">
+<h1>Operatori sulle stringhe</h1>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> nomeUtente    <span class="op">=</span> <span class="st">&quot;Mario&quot;</span><span class="op">;</span>
+<span class="kw">var</span> cognomeUtente <span class="op">=</span> <span class="st">&quot;Rossi&quot;</span><span class="op">;</span>
+
+<span class="co">// concatenazione di stringhe</span>
+<span class="kw">var</span> nomeCompleto  <span class="op">=</span> nomeUtente <span class="op">+</span> cognomeUtente<span class="op">;</span></code></pre></div>
+<p>Gli altri operatori sulle stringhe non funzionano in javascript.<br />
+Non è necessariamente vero in altri lunguaggi.</p>
+</section><section id="commenti" class="slide level2">
+<h1>Commenti</h1>
+<p>Nei linguaggi di programmazione è permesso (nonchè altamente consigliato), commentare il codice:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// i commenti possono essere su una linea sola</span>
+
+<span class="co">/*</span>
+<span class="co"> oppure su</span>
+<span class="co"> più di una linea</span>
+<span class="co">*/</span></code></pre></div>
+<p>i commenti non vengono letti dall'interprete, ma servono a noi programmatori per appuntare per noi e per gli altri il significato dei nostri ragionamenti. usateli usateli usateli</p>
+</section></section>
+<section><section id="condizioni" class="titleslide slide level1"><h1>Condizioni</h1></section><section id="istruzioni-condizionali" class="slide level2">
+<h1>Istruzioni condizionali</h1>
+<p>Ogni tanto abbiamo bisogno di eseguire delle operazioni solo quando alcune condizioni sono verificate.</p>
+<blockquote>
+<p>Se piove, prendo l'ombrello.</p>
+</blockquote>
+<blockquote>
+<p>Se il livello di pm10 sale oltre il limite, i veicoli con targa pari stanno fermi.</p>
+</blockquote>
+</section><section id="if" class="slide level2">
+<h1>If</h1>
+<p>In javascript utilizziamo la keyword <code>if</code>:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (livello_pm10 <span class="op">&gt;</span> <span class="dv">100</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Limite superato!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p>la condizione da verificare si mette dentro le parentesi.<br />
+il blocco viene delimitato da parentesi graffe <code>{</code> e <code>}</code></p>
+</section><section id="if-1" class="slide level2">
+<h1>If</h1>
+<p>Le condizioni restituiscono un valore di verità (vero o falso).<br />
+Gli operatori utilizzati nelle condizioni più comunemente sono:</p>
+<ul>
+<li><code>==</code> (uguale, ma due volte!! importante. un uguale solo indica assegnazione!)</li>
+<li><code>&lt;</code> minore, <code>&gt;</code> maggiore, <code>&lt;=</code> minore uguale, <code>&gt;=</code> maggiore uguale</li>
+<li><code>!=</code> diverso</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (livello_pm10 <span class="op">&gt;</span> <span class="dv">100</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Blocco del traffico con livello_pm10 superiore a 100!!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span>
+
+<span class="co">// esempio di controllo password</span>
+<span class="cf">if</span> (password <span class="op">!=</span> <span class="st">&#39;segreto&#39;</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;La password non è corretta!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="else" class="slide level2">
+<h1>else</h1>
+<p>Nel costrutto <code>if</code> è possibile specificare anche un'operazione da eseguire nel caso in cui la condizione non sia vera (se piove, prendi ombrello, <strong>altrimenti</strong>, gli occhiali da sole:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (livello_pm10 <span class="op">&gt;</span> <span class="dv">100</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Auto bloccata!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Macchina accesa!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="operatori-booleani" class="slide level2">
+<h1>Operatori booleani</h1>
+<p>Nelle condizioni è possibile utilizzare gli operatori booleani come nei linguaggi naturali che parliamo quotidianamente:</p>
+<h3 id="and">AND</h3>
+<p><code>&amp;&amp;</code> (vero se entrambe le condizioni sono verificate, e, congiunzione, moltiplicazione)</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">
+<span class="cf">if</span> (temperatura <span class="op">&gt;</span> <span class="dv">20</span> and umidita <span class="op">&gt;</span> <span class="dv">80</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;accendi ventilatore&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="operatori-booleani-1" class="slide level2">
+<h1>Operatori booleani</h1>
+<h3 id="or">OR</h3>
+<p><code>||</code> (vero se una delle condizioni è vera, o, disgiunzione, somma)</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (livello_pm10 <span class="op">&gt;</span> <span class="dv">100</span> or tipologiaEuroAuto <span class="op">&lt;</span> <span class="dv">3</span>) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Non puoi circolare con pm10 sopra i 100 o con un auto EURO3&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="esercizio" class="slide level2">
+<h1>Esercizio:</h1>
+<p>Puoi prendere la macchina se il pm10 è &lt; 100 o se la tua macchina è almeno EURO5:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> pm10      <span class="op">=</span>  <span class="dv">130</span><span class="op">;</span>
+<span class="kw">var</span> euroAuto  <span class="op">=</span>  <span class="dv">5</span><span class="op">;</span>
+
+<span class="kw">var</span> possoPrendereAuto <span class="op">=</span> .......... <span class="co">// che ci metto?</span>
+
+<span class="cf">if</span> (possoPrendereAuto) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Posso prendere la macchina!&quot;</span>)
+<span class="op">}</span></code></pre></div>
+</section><section id="operatori-booleani-2" class="slide level2">
+<h1>Operatori booleani</h1>
+<h3 id="not">NOT</h3>
+<p><code>!</code> (negazione)</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> etaUtente <span class="op">=</span> <span class="dv">18</span><span class="op">;</span>
+<span class="kw">var</span> maggiorenne <span class="op">=</span> etaUtente <span class="op">&gt;=</span> <span class="dv">18</span><span class="op">;</span>
+<span class="cf">if</span> (<span class="op">!</span>maggiorenne) <span class="op">{</span>
+    <span class="at">alert</span>(<span class="st">&quot;Non sei maggiorenne!&quot;</span>)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="altre-istruzioni-condizionali" class="slide level2">
+<h1>Altre istruzioni condizionali</h1>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (a) <span class="op">{</span>
+    ...
+<span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (b) <span class="op">{</span>
+    ...
+<span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> (c) <span class="op">{</span>
+...
+<span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+    ...
+<span class="op">}</span></code></pre></div>
+</section><section id="altre-istruzioni-condizionali-1" class="slide level2">
+<h1>Altre istruzioni condizionali</h1>
+<h3 id="switch">Switch</h3>
+<p>E' un altro modo per eseguire codice condizionale, utile quando la condizione da verificare può assumere tanti valori diversi:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> euroAuto <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>
+<span class="cf">switch</span> (euroAuto) <span class="op">{</span>
+    <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span>
+        <span class="at">alert</span>(<span class="st">&quot;La tua auto può percorrere 20km&quot;</span>)<span class="op">;</span>
+        <span class="cf">break</span><span class="op">;</span>
+    <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span>
+        <span class="at">alert</span>(<span class="st">&quot;La tua auto può percorrere 40km&quot;</span>)<span class="op">;</span>
+        <span class="cf">break</span><span class="op">;</span>
+    <span class="cf">case</span> <span class="dv">3</span><span class="op">:</span>
+        ....
+<span class="op">}</span></code></pre></div>
+</section><section id="altre-istruzioni-condizionali-2" class="slide level2">
+<h1>Altre istruzioni condizionali</h1>
+<h3 id="if-ternario">if ternario</h3>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">
+<span class="kw">var</span> nomeVariabile <span class="op">=</span> condizione <span class="op">?</span> valoreSeVera : valoreSeFalsa<span class="op">;</span>
+
+<span class="co">// esempio inutile</span>
+<span class="kw">var</span> sonoMaggiorenne <span class="op">=</span> etaUtente <span class="op">&gt;=</span> <span class="dv">18</span> <span class="op">?</span> <span class="kw">true</span> : <span class="kw">false</span><span class="op">;</span>
+<span class="kw">var</span> sonoMinorenne <span class="op">=</span> sonoMaggiorenne <span class="op">?</span> <span class="kw">false</span> : <span class="kw">true</span><span class="op">;</span>
+
+<span class="co">// si poteva anche fare:</span>
+<span class="kw">var</span> sonoMinorenne <span class="op">=</span> <span class="op">!</span>sonoMaggiorenne<span class="op">;</span>
+
+<span class="kw">var</span> msg <span class="op">=</span> sonoMaggiorenne <span class="op">?</span> <span class="st">&quot;Puoi entrare&quot;</span> : <span class="st">&quot;Non puoi entrare&quot;</span><span class="op">;</span>
+<span class="at">alert</span>(msg)<span class="op">;</span></code></pre></div>
+</section></section>
+<section><section id="cicli" class="titleslide slide level1"><h1>Cicli</h1></section><section id="cicli-1" class="slide level2">
+<h1>Cicli</h1>
+<p>I cicli permettono di <strong>ripetere</strong> un'istruzione o un blocco di istruzioni.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">
+<span class="co">// while</span>
+<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>
+<span class="cf">while</span> (i<span class="op">&lt;</span><span class="dv">10</span>) <span class="op">{</span>
+    <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span>
+    i <span class="op">=</span> i<span class="dv">+1</span><span class="op">;</span>
+<span class="op">}</span>
+
+<span class="co">// for</span>
+<span class="cf">for</span> (<span class="kw">var</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+    <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="array" class="slide level2">
+<h1>Array</h1>
+<p>I cicli sono molto utili con gli <code>array</code>. Gli array sono liste di variabili.<br />
+In qualche modo anche le stringhe sono array (sono liste di caratteri).</p>
+<p>Utenti, serie di numeri, serie di date, liste di post, liste di amici, liste di contatti, sono tutte cose che possiamo rappresentare con gli array.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// lista dei primi 5 numeri pari</span>
+<span class="kw">var</span> primi5NumeriPari <span class="op">=</span> [<span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">;</span></code></pre></div>
+</section><section id="array-1" class="slide level2">
+<h1>Array</h1>
+<p>Possiamo accedere ad un elemento di un array usando la sua posizione come indice:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="co">// creo un array senza elementi</span>
+<span class="kw">var</span> primi5NumeriDispari <span class="op">=</span> []
+
+<span class="co">// valorizzo</span>
+primi5NumeriDispari[<span class="dv">0</span>] <span class="op">=</span> primi5NumeriDispari[<span class="dv">0</span>]<span class="op">-</span><span class="dv">1</span><span class="op">;</span>
+primi5NumeriDispari[<span class="dv">1</span>] <span class="op">=</span> primi5NumeriDispari[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span><span class="op">;</span>
+primi5NumeriDispari[<span class="dv">2</span>] <span class="op">=</span> primi5NumeriDispari[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span><span class="op">;</span>
+primi5NumeriDispari[<span class="dv">3</span>] <span class="op">=</span> primi5NumeriDispari[<span class="dv">3</span>]<span class="op">-</span><span class="dv">1</span><span class="op">;</span>
+primi5NumeriDispari[<span class="dv">4</span>] <span class="op">=</span> primi5NumeriDispari[<span class="dv">4</span>]<span class="op">-</span><span class="dv">1</span><span class="op">;</span></code></pre></div>
+</section><section id="ciclare" class="slide level2">
+<h1>Ciclare</h1>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">for</span> (<span class="kw">var</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span><span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span>
+    primi5NumeriDispari[i] <span class="op">=</span> primi5NumeriPari[i]<span class="op">-</span><span class="dv">1</span><span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+</section><section id="esempio" class="slide level2">
+<h1>Esempio</h1>
+<p>stampare il seguente triangolo</p>
+<pre><code>#
+##
+###
+####
+#####
+######
+#######</code></pre>
+</section><section id="valori-di-ritorno" class="slide level2">
+<h1>Valori di ritorno</h1>
+<p>Mostrare dialoghi, o scrivere a schermo sono <code>side effect</code>. Molte funzioni sono utili proprio per questo, ma le funzioni possono produrre anche <strong>valori</strong>.<br />
+Quando una funzione produce un valore, questo di chiama <strong>valore di ritorno</strong> e si dice che la funzione <strong>ritorna</strong> quel dato valore.<br />
+Ad esempio la funzione <code>Math.max</code> ritorna il numero massimo tra quelli che gli <strong>argomenti</strong> che gli vengono passati tra parentesi:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> etaMassima <span class="op">=</span> <span class="va">Math</span>.<span class="at">max</span>(<span class="dv">20</span><span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">26</span>)<span class="op">;</span>
+<span class="at">alert</span>(etaMassima)<span class="op">;</span></code></pre></div>
+</section><section id="altri-esempi" class="slide level2">
+<h1>Altri esempi</h1>
+<p>metodi su date, stringhe, numeri ...</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
